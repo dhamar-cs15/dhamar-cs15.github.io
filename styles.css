@@ -62,14 +62,67 @@ nav ul li a:hover::after{
 }
 
 .header-text{
-    margin-top: 15%;
+    margin-top: 14%;
     font-size: 30px;
+    position: absolute;
+    padding: 2rem;
 }
 
 .header-text h1{
     font-size: 60px;
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     color: #3d82c2;
+}
+
+/* .header-text ol{
+    width: 35vw;
+    font-size: 32px;
+    font-weight: 300;
+    list-style: none;
+    --height: 3.8rem;
+    height: var(--height);
+    line-height: var(--height);
+    overflow: hidden;
+} */
+
+.typed-container {
+    max-width: 35vw;       /* half the page width */
+    margin: 0 auto;        /* center it */
+    text-align: left;      /* or center if you prefer */
+    line-height: 1.0;
+    white-space: normal;   /* allow wrapping */
+    word-break: break-word;
+}
+
+.typed-text{
+    font-size: 34px;
+    font-weight: 300;
+}
+
+.cursor{
+    display: inline-block;
+    color: #5b82d1;
+    animation: blink 0.7s infinite;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+@keyframes blink {
+    0%, 100% {opacity: 1; }
+    50% {opacity: 0; }
+}
+
+.highlight-blue {
+  background-color: #c3deff;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.highlight-pink {
+  background-color: #feb8b8;
+  padding: 0 4px;
+  border-radius: 3px;
 }
 
 /* about */
@@ -205,7 +258,15 @@ nav ul li a:hover::after{
 
 .layer h3{
     font-weight: 500;
+    font-size: 22px;
     margin-bottom: 20px;
+    color: #fff;
+}
+
+.layer p{
+    font-weight: 300;
+    font-size: 18px;
+    color: #FFF;
 }
 
 .layer a{
@@ -290,13 +351,18 @@ nav ul li a:hover::after{
     font-weight: 700;
 }
 
-.footer{
+.footer .copyright{
     text-align: center;
-    padding: 20px;
     font-size: 16px;
     font-weight: lighter;
     color: #00091c;
     margin-bottom: 50px;
+}
+
+.footer p{
+    text-align: center;
+    color: #3d82c2;
+    font-size: 15px;
 }
 
 /* light blue: c3deff

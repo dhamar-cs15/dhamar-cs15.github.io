@@ -397,12 +397,13 @@ nav ul li a:hover::after{
 
 /* ABOUT ME PAGE */
 .about-hero{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 900px;
     margin-top: 3%;
-    padding: 2rem;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .about-hero h1{
@@ -417,6 +418,50 @@ nav ul li a:hover::after{
     padding: 15px;
 }
 
+.arrow-img {
+    position: absolute;
+    left: -50px;
+    top: 230px;
+    width: 80px;
+}
+
+.stars {
+    width: 40px;
+    margin: 1rem auto;
+}
+
+.intro-section {
+    display: flex;
+    justify-content: center;    
+    max-width: 650px;
+    margin-bottom: 2rem;
+    margin: 0 auto 2rem auto;
+    text-align: left;
+}
+
+.intro-section p{
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.intro-text h3{
+    font-size: 19px;
+    color: #3d82c2;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+
+/* .about-hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    padding: 2rem;
+    flex-direction: column;
+}
+
+
 .intro-section, .library-section, .summary-section{
     margin-bottom: 3rem;
 }
@@ -425,7 +470,7 @@ nav ul li a:hover::after{
     text-align: center;
     margin-top: 1rem;
     font-size: 16px;
-}
+} */
 
 /* .arrow{
     width: 60px;
@@ -440,23 +485,60 @@ nav ul li a:hover::after{
     margin: 1rem auto;
 } */
 
-.library-layout{
+/* .library-layout{
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
     gap: 2rem;
 }
 
-.library-img{
-    width: 45%;
-    height: auto;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    text-align: center;
+.library-image {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-align: center;
+  flex-shrink: 0;
+  /* overflow: hidden; 
 }
+
+
+.library-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .library-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .library-image {
+    width: 100%;
+    height: 180px;
+  }
+} */
+
+/* .library-col-1{
+    flex-basis: 40%;
+}
+
+.library-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.library-col-2{
+    flex-basis: 55%;
+}
+
+.library-col-2 p{
+    font-size: 18px;
+} */
 
 
 

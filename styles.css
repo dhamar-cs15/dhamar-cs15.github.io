@@ -440,7 +440,23 @@ nav ul li a:hover::after{
     margin: 1rem auto;
 } */
 
+.library-layout{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+}
 
+.library-img{
+    width: 45%;
+    height: auto;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    text-align: center;
+}
 
 
 

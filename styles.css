@@ -396,8 +396,14 @@ nav ul li a:hover::after{
 }
 
 /* ABOUT ME PAGE */
+.about-container {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 25px 5%;
+}
+
 .about-hero{
-    max-width: 900px;
+    /* max-width: auto; */
     margin-top: 3%;
     display: flex;
     flex-direction: column;
@@ -412,18 +418,31 @@ nav ul li a:hover::after{
     text-align: center;
 }
 
-.profile-pic{
+.profile-pic {
     width: 40%;
-    margin: 10px;
-    padding: 15px;
+    height: 40%;
+    border-radius: 50%;
+    overflow: hidden; /* ensures the image stays circular */
+    margin: 2rem auto 1.5rem auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.arrow-img {
-    position: absolute;
-    left: -50px;
-    top: 230px;
-    width: 80px;
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
+
+/* .arrow-img {
+  position: absolute;
+  left: 20px;
+  top: 230px;
+  width: 80px;
+} */
 
 .stars {
     width: 40px;
@@ -462,7 +481,8 @@ nav ul li a:hover::after{
     display: flex;
     align-items: flex-start;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0rem;
 }
 
 .library-img {
@@ -470,20 +490,45 @@ nav ul li a:hover::after{
 }
 
 .library-img img {
-    width: 100%;
+    width: 95%;
     height: auto;
-    display: block;
+    /* display: block; */
 }
 
 .library-text {
-    flex: 0 0 45%;
+    flex: 0 0 50%;
+    max-width: 50%;
     text-align: left;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .library-text p {
     margin: 1rem 0 1rem 2rem;
 }
+
+.summary-section {
+    text-align: center;
+}
+
+/* @media (max-width: 768px) {
+    .library-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+
+    .library-text {
+    text-align: center;
+    }
+
+    /* .arrow-img {
+    display: none;
+    } */
+
+    /* .stars-img {
+    display: none;
+    }
+} */
 
 /* .about-hero{
     display: flex;

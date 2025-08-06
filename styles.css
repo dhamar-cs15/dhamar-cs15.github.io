@@ -152,7 +152,7 @@ nav ul li a:hover::after{
 }
 
 .about-col-1 img{
-    width: 100%;
+    width: 95%;
     border-radius: 15px;
 }
 
@@ -160,8 +160,16 @@ nav ul li a:hover::after{
     flex-basis: 55%;
 }
 
+.about-col-2 p.italicize{
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
 .about-col-2 p{
     font-size: 18px;
+    font-weight: 300;
 }
 
 .sub-title{
@@ -181,9 +189,14 @@ nav ul li a:hover::after{
     margin: 20px 0 40px;
 }
 
+.tab-titles p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .tab-links{
     margin-right: 50px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -208,7 +221,7 @@ nav ul li a:hover::after{
     list-style: none;
     margin: 10px 0;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .tab-contents ul li span{
@@ -617,6 +630,54 @@ nav ul li a:hover::after{
 .library-col-2 p{
     font-size: 18px;
 } */
+
+.case-study-container {
+    padding: 0 10%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.case-study-container ul li {
+    margin-left: 2rem;
+}
+
+.quote-box {
+    background: linear-gradient(to right, #c3deff, #f2f8ff);  
+    /* background-color: #c3deff; */
+    border-left: 4px solid #3d82c2;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+
+/* whoop case study page */
+
+.project-overview, .project-details, .project-research, 
+.user-research, .next-step {
+    margin-bottom: 3rem;
+}
+
+.project-overview, .project-details, .project-research, 
+.user-research, .next-step p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.whoop-images {
+    margin: 1rem 0;
+}
+
+.whoop-images img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
+
 
 
 

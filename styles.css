@@ -632,7 +632,7 @@ nav ul li a:hover::after{
 } */
 
 .case-study-container {
-    padding: 0 10%;
+    padding: 0 5%;
     max-width: 1100px;
     margin: 0 auto;
 }

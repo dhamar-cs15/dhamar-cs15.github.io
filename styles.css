@@ -252,6 +252,8 @@ nav ul li a:hover::after{
 }
 
 .work{
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -260,6 +262,7 @@ nav ul li a:hover::after{
 .work img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
@@ -678,7 +681,17 @@ nav ul li a:hover::after{
     display: block;
 }
 
+.w2w-images {
+    margin: 1rem 0;
+}
 
+.w2w-images img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
 
 
 /* light blue: c3deff

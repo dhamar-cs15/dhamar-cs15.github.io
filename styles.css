@@ -693,6 +693,14 @@ nav ul li a:hover::after{
     display: block;
 }
 
+.w2w-title-img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
 
 /* light blue: c3deff
 yellow: fcd98b

@@ -103,4 +103,12 @@ function opentab(event, tabname) {
 }
 
 
+const btn = document.getElementById('toggleBtn');
+const wrapper = document.getElementById('imageWrapper');
 
+btn.addEventListener('click', () => {
+  wrapper.classList.toggle('expanded');
+  btn.textContent = wrapper.classList.contains('expanded')
+    ? 'Show less'
+    : 'Show more';
+});

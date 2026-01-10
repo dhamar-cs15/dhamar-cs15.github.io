@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- push to github every 5 min -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>Movies and the Economy</title>
+        <link rel="stylesheet" href="styles.css"> 
+        <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <img src="images/logo.jpg" alt="logo" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Art</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="film-scene">
+            <div class="film-container">
+                <div id="film-roll">
+                    <div class="reel-outer">
+                    <div class="reel-inner">
+                        <div class="reel-core"></div>
+                    </div>
+                    </div>
+                    <div class="film-strip"></div>
+                    <div class="spokes"></div>
+                </div>
+            </div>
+            <section id="rising-section">
+                <h1>Next Section</h1>
+                <p>Your page content starts here</p>
+            </section>
+        </section>
+        <div id="scroll-spacer"></div>
+    </body>
+
+    <script> 
+        const film = document.getElementById("film-roll");
+        const risingSection = document.getElementById("rising-section");
+        const filmScene = document.querySelector(".film-scene");
+        const sceneTop = filmScene.offsetTop;
+
+        const ROTATE_PHASE = 200;
+        const RISE_START = 50;
+        const RISE_PHASE = 220;
+        const TOTAL = ROTATE_PHASE + RISE_PHASE;
+
+        console.log(`ROTATE_PHASE: ${ROTATE_PHASE}, RISE_PHASE: ${RISE_PHASE}, TOTAL: ${TOTAL}`);
+        console.log(`Initial window.innerHeight: ${window.innerHeight}`);
+
+        // Spokes
+        const spokeContainer = document.querySelector('.spokes');
+        for (let i = 0; i < 12; i++) {
+        const spoke = document.createElement('div');
+        spoke.className = 'spoke';
+        spoke.style.transform = `rotate(${(i * 360) / 12}deg)`;
+        spokeContainer.appendChild(spoke);
+        }
+
+        // const animationLength = window.innerHeight;
+
+        window.addEventListener("scroll", () => {
+            const rawScroll = window.scrollY;
+            const sceneScroll = rawScroll - sceneTop;
+            const scroll = Math.max(0, Math.min(sceneScroll, TOTAL));
+
+            // keep console tidy while scrolling
+            console.clear();
+            console.log(`window.scrollY: ${window.scrollY}, clamped scrollY: ${scroll}`);
+
+            /* -------- FILM ROTATION -------- */
+
+            let rotation;
+
+            if (scroll <= ROTATE_PHASE) {
+                rotation = (scroll / ROTATE_PHASE) * 45;
+                console.log(`phase: ROTATING (0-${ROTATE_PHASE}), rotation: ${rotation.toFixed(2)}deg`);
+            } else {
+                rotation = 45 + (scroll - ROTATE_PHASE) * 0.25;
+                console.log(`phase: ROTATION+ (>${ROTATE_PHASE}), rotation: ${rotation.toFixed(2)}deg`);
+            }
+
+            film.style.transform = `rotate(${rotation}deg)`;
+            console.log(`applied film transform: rotate(${rotation}deg)`);
+
+            /* -------- SECTION RISE -------- */
+
+
+            const reelRect = film.getBoundingClientRect();
+            const reelCenter = reelRect.top + reelRect.height / 2;
+
+            if (scroll < RISE_START) {
+                // risingSection.style.position = "fixed";
+                // risingSection.style.top = "100vh";
+                risingSection.style.position = "fixed";
+                risingSection.style.top = "0";
+                risingSection.style.transform = `translateX(-50%) translateY(100vh)`;
+                console.log('risingSection: waiting (below rotate phase)');
+            }
+
+            else if (scroll <= RISE_START + RISE_PHASE) {
+                risingSection.style.position = "fixed";
+                risingSection.style.top = "0";
+
+                const progress = (scroll - RISE_START) / RISE_PHASE;
+
+                const startY = window.innerHeight;      // offscreen bottom
+                const endY = reelCenter;                // reel center (viewport space)
+
+                const y = startY + (endY - startY) * progress;
+
+                risingSection.style.transform =
+                `translateX(-50%) translateY(${y}px)`;
+
+            }
+            else {
+                 // Release the entire film scene so everything scrolls away together
+                // const filmScene = document.querySelector(".film-scene");
+                // risingSection.style.transform = "translateX(-50%) translateY(0)";
+
+                // filmScene.style.position = "relative";
+                // filmScene.style.height = "200vh";
+
+                // risingSection.style.position = "relative";
+                // risingSection.style.top = "50vh";
+
+                // risingSection.style.position = "fixed";
+                // risingSection.style.top = "0";
+                // risingSection.style.transform =
+                // `translateX(-50%) translateY(${reelCenter}px)`;
+
+                // // Release the section into the document flow
+                // risingSection.style.position = "absolute";
+
+                // // Place it exactly where it visually stopped
+                // const reelRect = film.getBoundingClientRect();
+                // const reelCenter = reelRect.top + reelRect.height / 2;
+
+                // // Convert viewport position to document position
+                // const absoluteTop = window.scrollY + reelCenter;
+
+                // risingSection.style.top = `${absoluteTop}px`;
+                // risingSection.style.transform = "translateX(-50%)";
+
+                const reelRect = film.getBoundingClientRect();
+                const sceneRect = filmScene.getBoundingClientRect();
+
+                const reelCenterInScene =
+                    reelRect.top - sceneRect.top + reelRect.height / 2;
+
+                risingSection.style.position = "absolute";
+                risingSection.style.top = `${reelCenterInScene}px`;
+                risingSection.style.transform = "translateX(-50%)";
+            }
+            });
+
+    </script>
+
+</html>

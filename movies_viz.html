@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <nav>
-                <img src="images/logo.jpg" alt="logo" class="logo">
+                <a href="index.html" aria-label="Home"><img src="images/logo.jpg" alt="logo" class="logo"></a>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -36,133 +36,175 @@
                 </div>
             </div>
             <section id="rising-section">
-                <h1>Next Section</h1>
-                <p>Your page content starts here</p>
+                <h1>Past, Present, Projection: How Movies Reflect the World</h1>
+                <h3>A data visualization project on how film genres reflect economic trends.</h3>
+                <div class="project-meta">
+                    <p style="font-size: 20px; font-weight: 400"><b>Role: </b> Visual Designer & Data Visualization Developer</p>
+                    <p><b>Team: </b> 3 students</p>
+                    <p><b>Timeline: </b> 2 months</p>
+                    <p><b>Tools: </b> HTML, CSS, Javascript (D3.js), React</p>
+                </div>
+                <div class="project-section">
+                    <h2 class="underline-on-scroll">The Problem and Motivation</h2>
+                    <p>Inspired by recent online trends that have highlighted certain products 
+                    (such as Labubus and lipsticks) as <span class="highlight-blue">"recession indicators,"</span> we decided to 
+                    research whether <span class="highlight-pink">entertainment</span> itself could also serve as an economic indicator.</p>
+                    <p>We found that during the COVID-19 pandemic, audiences were most interested in superhero and action movies, 
+                        leading us to ask our fundamental question: 
+                        <b> Does the world tend to watch certain genres during devastating times, such as periods of economic hardship?</b></p>                
+                </div>
+                <img src="images/movies/superhero_trend.png" alt="superhero_trend">
+                <div class="project-section">
+                    <h2 class="underline-on-scroll">My Role and Contributions</h2>
+                    <p>This project was a collaborative effort where we all contributed equally to the process and worked on the same tasks 
+                        during the early stages of the project which involved <span class="highlight-blue">data analysis, sketching visualizations, and storyboarding.</span></p>
+                    <p>As we moved into the development phase, I took on the role of <span class="highlight-pink">designing the overall look and feel of the website,</span> as well as implementing some of the visualizations using D3.js and React. 
+                        I was responsible for creating the (non-visualization) <span class="highlight-pink">interactive elements</span> that would be used throughout the website, including any animations. I also worked on optimizing the performance of the visualizations to ensure a smooth user experience.</p>
+                </div>
+                <div class="project-section">
+                    <h2 class="underline-on-scroll">From Data to insights</h2>
+                    <p>We began by analyzing datasets that provided information regarding global indicators such as unemployment rates and economic freedom indices, as well as movie statistics such as popularity ratings, genre categorizations, and box office revenues.</p>
+                    <p>I focused on finding patterns between unemployment rates in the United States and the most popular genres in the domestic market, as well as the popularity of these genres on a global scale, using countries' economic freedom indices.</p>
+                </div>
+
+                 <!-- Overlapping work gallery -->
+                <section class="overlap-gallery">
+                <div class="container">
+                    <div class="gallery" aria-hidden="false">
+                    <div class="overlap-item">
+                        <img src="images/w2w/w2w_title.png" alt="Weather 2 Wear title">
+                    </div>
+                    <div class="overlap-item">
+                        <img src="images/w2w/w2w_intro.png" alt="Weather 2 Wear intro">
+                    </div>
+                    <div class="overlap-item">
+                        <img src="images/whoop/whoop_intro.png" alt="WHOOP case study intro">
+                    </div>
+                    <div class="overlap-item">
+                        <img src="images/w2w/w2w_appintro.png" alt="Weather 2 Wear app intro">
+                    </div>
+                    </div>
+                </div>
+                </section>
             </section>
         </section>
         <div id="scroll-spacer"></div>
-    </body>
 
-    <script> 
-        const film = document.getElementById("film-roll");
-        const risingSection = document.getElementById("rising-section");
-        const filmScene = document.querySelector(".film-scene");
-        const sceneTop = filmScene.offsetTop;
+        <script> 
+            const film = document.getElementById("film-roll");
+            const risingSection = document.getElementById("rising-section");
+            const filmScene = document.querySelector(".film-scene");
+            const sceneTop = filmScene.offsetTop;
 
-        const ROTATE_PHASE = 200;
-        const RISE_START = 50;
-        const RISE_PHASE = 220;
-        const TOTAL = ROTATE_PHASE + RISE_PHASE;
+            const ROTATE_PHASE = 250;
+            const RISE_START = 80;
+            const RISE_PHASE = 220;
+            const TOTAL = ROTATE_PHASE + RISE_PHASE;
 
-        console.log(`ROTATE_PHASE: ${ROTATE_PHASE}, RISE_PHASE: ${RISE_PHASE}, TOTAL: ${TOTAL}`);
-        console.log(`Initial window.innerHeight: ${window.innerHeight}`);
+            // Calculate the initial reel center position (when page loads)
+            let initialReelCenter = null;
 
-        // Spokes
-        const spokeContainer = document.querySelector('.spokes');
-        for (let i = 0; i < 12; i++) {
-        const spoke = document.createElement('div');
-        spoke.className = 'spoke';
-        spoke.style.transform = `rotate(${(i * 360) / 12}deg)`;
-        spokeContainer.appendChild(spoke);
-        }
+            console.log(`ROTATE_PHASE: ${ROTATE_PHASE}, RISE_PHASE: ${RISE_PHASE}, TOTAL: ${TOTAL}`);
+            console.log(`Initial window.innerHeight: ${window.innerHeight}`);
 
-        // const animationLength = window.innerHeight;
-
-        window.addEventListener("scroll", () => {
-            const rawScroll = window.scrollY;
-            const sceneScroll = rawScroll - sceneTop;
-            const scroll = Math.max(0, Math.min(sceneScroll, TOTAL));
-
-            // keep console tidy while scrolling
-            console.clear();
-            console.log(`window.scrollY: ${window.scrollY}, clamped scrollY: ${scroll}`);
-
-            /* -------- FILM ROTATION -------- */
-
-            let rotation;
-
-            if (scroll <= ROTATE_PHASE) {
-                rotation = (scroll / ROTATE_PHASE) * 45;
-                console.log(`phase: ROTATING (0-${ROTATE_PHASE}), rotation: ${rotation.toFixed(2)}deg`);
-            } else {
-                rotation = 45 + (scroll - ROTATE_PHASE) * 0.25;
-                console.log(`phase: ROTATION+ (>${ROTATE_PHASE}), rotation: ${rotation.toFixed(2)}deg`);
+            // Spokes
+            const spokeContainer = document.querySelector('.spokes');
+            for (let i = 0; i < 12; i++) {
+                const spoke = document.createElement('div');
+                spoke.className = 'spoke';
+                spoke.style.transform = `rotate(${(i * 360) / 12}deg)`;
+                spokeContainer.appendChild(spoke);
             }
 
-            film.style.transform = `rotate(${rotation}deg)`;
-            console.log(`applied film transform: rotate(${rotation}deg)`);
+            window.addEventListener("scroll", () => {
+                const rawScroll = window.scrollY;
+                const sceneScroll = rawScroll - sceneTop;
+                const scroll = Math.max(0, sceneScroll);
 
-            /* -------- SECTION RISE -------- */
+                // Set initial reel center on first scroll
+                if (initialReelCenter === null) {
+                    const reelRect = film.getBoundingClientRect();
+                    initialReelCenter = reelRect.top + reelRect.height / 2;
+                    console.log(`Initial reel center set at: ${initialReelCenter}px`);
+                }
 
+                console.log(`window.scrollY: ${window.scrollY}, clamped scrollY: ${scroll}`);
 
-            const reelRect = film.getBoundingClientRect();
-            const reelCenter = reelRect.top + reelRect.height / 2;
+                /* -------- FILM ROTATION -------- */
 
-            if (scroll < RISE_START) {
-                // risingSection.style.position = "fixed";
-                // risingSection.style.top = "100vh";
-                risingSection.style.position = "fixed";
-                risingSection.style.top = "0";
-                risingSection.style.transform = `translateX(-50%) translateY(100vh)`;
-                console.log('risingSection: waiting (below rotate phase)');
-            }
+                let rotation;
 
-            else if (scroll <= RISE_START + RISE_PHASE) {
-                risingSection.style.position = "fixed";
-                risingSection.style.top = "0";
+                if (scroll <= ROTATE_PHASE) {
+                    rotation = (scroll / ROTATE_PHASE) * 45;
+                    console.log(`phase: ROTATING (0-${ROTATE_PHASE}), rotation: ${rotation.toFixed(2)}deg`);
+                } else {
+                    rotation = 45 + (scroll - ROTATE_PHASE) * 0.25;
+                    console.log(`phase: ROTATION+ (>${ROTATE_PHASE}), rotation: ${rotation.toFixed(2)}deg`);
+                }
 
-                const progress = (scroll - RISE_START) / RISE_PHASE;
+                film.style.transform = `rotate(${rotation}deg)`;
+                console.log(`applied film transform: rotate(${rotation}deg)`);
 
-                const startY = window.innerHeight;      // offscreen bottom
-                const endY = reelCenter;                // reel center (viewport space)
+                /* -------- SECTION RISE -------- */
 
-                const y = startY + (endY - startY) * progress;
-
-                risingSection.style.transform =
-                `translateX(-50%) translateY(${y}px)`;
-
-            }
-            else {
-                 // Release the entire film scene so everything scrolls away together
-                // const filmScene = document.querySelector(".film-scene");
-                // risingSection.style.transform = "translateX(-50%) translateY(0)";
-
-                // filmScene.style.position = "relative";
-                // filmScene.style.height = "200vh";
-
-                // risingSection.style.position = "relative";
-                // risingSection.style.top = "50vh";
-
-                // risingSection.style.position = "fixed";
-                // risingSection.style.top = "0";
-                // risingSection.style.transform =
-                // `translateX(-50%) translateY(${reelCenter}px)`;
-
-                // // Release the section into the document flow
-                // risingSection.style.position = "absolute";
-
-                // // Place it exactly where it visually stopped
-                // const reelRect = film.getBoundingClientRect();
-                // const reelCenter = reelRect.top + reelRect.height / 2;
-
-                // // Convert viewport position to document position
-                // const absoluteTop = window.scrollY + reelCenter;
-
-                // risingSection.style.top = `${absoluteTop}px`;
-                // risingSection.style.transform = "translateX(-50%)";
-
-                const reelRect = film.getBoundingClientRect();
-                const sceneRect = filmScene.getBoundingClientRect();
-
-                const reelCenterInScene =
-                    reelRect.top - sceneRect.top + reelRect.height / 2;
-
-                risingSection.style.position = "absolute";
-                risingSection.style.top = `${reelCenterInScene}px`;
-                risingSection.style.transform = "translateX(-50%)";
-            }
+                // Calculate current position of rising section
+                const RISE_SPEED = 1.5; // How fast the section rises (higher = faster)
+                let currentY = window.innerHeight - scroll * RISE_SPEED;
+                
+                // Check if section has reached the reel center (using initial position)
+                const hasReachedCenter = currentY <= initialReelCenter;
+                
+                if (!hasReachedCenter) {
+                    // Phase 1: Rising from bottom
+                    risingSection.style.position = "fixed";
+                    risingSection.style.left = "50%";
+                    risingSection.style.top = "0";
+                    
+                    risingSection.style.transform = `translateX(-50%) translateY(${currentY}px)`;
+                    
+                    // Reset film container position
+                    const filmContainer = document.querySelector(".film-container");
+                    filmContainer.style.transform = `translateY(0)`;
+                    
+                } else {
+                    // Phase 2: Latched - calculate how far past the latch point we are
+                    const latchScrollPoint = (window.innerHeight - initialReelCenter) / RISE_SPEED;
+                    const scrollPastLatch = scroll - latchScrollPoint;
+                    const moveUp = scrollPastLatch * RISE_SPEED;
+                    
+                    // Both reel and section move up together
+                    const finalY = initialReelCenter - moveUp;
+                    
+                    risingSection.style.position = "fixed";
+                    risingSection.style.left = "50%";
+                    risingSection.style.top = "0";
+                    risingSection.style.transform = `translateX(-50%) translateY(${finalY}px)`;
+                    
+                    // Also move the film container up
+                    const filmContainer = document.querySelector(".film-container");
+                    filmContainer.style.transform = `translateY(-${moveUp}px)`;
+                }
             });
 
-    </script>
+            // Underline headings when they enter the viewport
+            (function() {
+                const targets = document.querySelectorAll('.underline-on-scroll');
+                if (!targets.length) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        } else {
+                            entry.target.classList.remove('active');
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                targets.forEach(t => observer.observe(t));
+            })();
+
+        </script>
+    </body>
 
 </html>

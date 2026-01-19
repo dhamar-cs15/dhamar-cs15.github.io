@@ -43,6 +43,7 @@
                     <p><b>Team: </b> 3 students</p>
                     <p><b>Timeline: </b> 2 months</p>
                     <p><b>Tools: </b> HTML, CSS, Javascript (D3.js), React</p>
+                    <p><b>Project: </b>View the full website <a href="https://jvizhco.github.io/unemployment/" target="_blank" rel="noopener">here.</a></p>
                 </div>
                 <div class="project-section">
                     <h2 class="underline-on-scroll">The Problem and Motivation</h2>
@@ -63,32 +64,71 @@
                 </div>
                 <div class="project-section">
                     <h2 class="underline-on-scroll">From Data to insights</h2>
-                    <p>We began by analyzing datasets that provided information regarding global indicators such as unemployment rates and economic freedom indices, as well as movie statistics such as popularity ratings, genre categorizations, and box office revenues.</p>
+                    <p>We began by analyzing datasets that provided information regarding <span class="highlight-blue">global indicators</span> such as unemployment rates and economic freedom indices, as well as <span class="highlight-pink">movie statistics</span> such as popularity ratings, genre categorizations, and box office revenues.</p>
                     <p>I focused on finding patterns between unemployment rates in the United States and the most popular genres in the domestic market, as well as the popularity of these genres on a global scale, using countries' economic freedom indices.</p>
                 </div>
 
                  <!-- Overlapping work gallery -->
                 <section class="overlap-gallery">
-                <div class="container">
                     <div class="gallery" aria-hidden="false">
                     <div class="overlap-item">
-                        <img src="images/w2w/w2w_title.png" alt="Weather 2 Wear title">
+                        <img src="images/movies/economic_map.png" alt="Economic freedom index map">
                     </div>
                     <div class="overlap-item">
-                        <img src="images/w2w/w2w_intro.png" alt="Weather 2 Wear intro">
+                        <img src="images/movies/genre_reel.png" alt="Weather 2 Wear intro">
                     </div>
                     <div class="overlap-item">
-                        <img src="images/whoop/whoop_intro.png" alt="WHOOP case study intro">
+                        <img src="images/movies/unemployment_barchart.png" alt="WHOOP case study intro">
                     </div>
                     <div class="overlap-item">
-                        <img src="images/w2w/w2w_appintro.png" alt="Weather 2 Wear app intro">
+                        <img src="images/movies/line_graph.png" alt="Weather 2 Wear app intro">
                     </div>
                     </div>
-                </div>
+                    <figcaption>Preliminary visualization sketches on paper</figcaption>
                 </section>
+
+                <div class="project-section" style="padding-top: 2rem;">
+                    <h2 class="underline-on-scroll">Creating the Storyline</h2>
+                    <p>Once we decided what type of visualizations we wanted to create, we began crafting the narrative. After hours of storyboarding and testing different approaches, we chose to tell the story of the insights 
+                        we ourselves had gained through our research. </p>
+                    <p>While we had initially theorized that the popularity of 
+                        general genres such as drama, romance, action, and horror would best mirror the changing state of the economy, 
+                        we found that the economy was more accurately represented by the popularity and production of movies that fell 
+                        into two categories: <span class="highlight-blue">escapism</span> and <span class="highlight-pink">non-escapism</span>.</p>
+                        <p><b>Thus, we would begin with visualizations analyzing trends seen across different genres and then redirect our focus to the correlations between the economy and escapism.</b></p>
+                        <div class="two-column-layout">
+                            <img src="images/movies/CS171 Project Storyboard.png" alt="storyboard">
+                            <img src="images/movies/escapism.png" alt="escapism vs nonescapism website section">
+                        </div>
+                </div>
+                <div class="project-section">
+                    <h2 class="underline-on-scroll">Visualizing the Website</h2>
+                    <p>When creating the website, I wanted to integrate film elements and transitions that were cinematic and contributed to a <span class="highlight-pink">scrollytelling experience.</span></p>
+                    <p>Reflecting our visualizations' key feature of being timelines from 1995 to 2024, I designed an evolving website that mimicked <span class="highlight-blue">the journey of movies through time.</span></p>
+                    <div class="two-column-layout">
+                        <figure>
+                            <figcaption class="upper-caption">The website opens up with a vintage film countdown</figcaption>
+                            <img src="images/movies/movies_opening.gif" alt="movies opening animation">
+                        </figure>
+                        <figure>
+                            <figcaption class="upper-caption">...and ends with a Netflix-style profile section. </figcaption>
+                            <img src="images/movies/ending_profiles.gif" alt="movies ending animation">
+                        </figure>
+                    </div>
+                    <p>The color palette was inspired by the movie presented in our hook, <span class="highlight-blue"><i>Spider-Man: No Way Home</i> (2021),</span> 
+                        featuring deep blues, strong reds, and bright ambers.</p>
+                </div>
+                <div class="two-column-images">
+                        <img src="images/movies/film-roll.png" alt="film-roll">
+                        <img src="images/movies/spider.png" alt="spider">
+                        <img src="images/movies/arrowweb.png" alt="arrow web">
+                        <img src="images/movies/spider-web.png" alt="spider-web">
+                </div>
+                <p>section in progress...</p>
             </section>
         </section>
         <div id="scroll-spacer"></div>
+        
 
         <script> 
             const film = document.getElementById("film-roll");
@@ -202,6 +242,25 @@
                 }, { threshold: 0.5 });
 
                 targets.forEach(t => observer.observe(t));
+            })();
+
+        // Fade in sections when they enter the viewport
+            (function() {
+                const sections = document.querySelectorAll('.project-section');
+                if (!sections.length) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-in-active');
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                sections.forEach(section => {
+                    section.classList.add('fade-in');
+                    observer.observe(section);
+                });
             })();
 
         </script>

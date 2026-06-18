@@ -9,17 +9,16 @@ body{
     background: #fff;
     color: #080808;
 }
-
-#index-header{
-
+    
 /* Styles for featured film page */
-.feature-video{
-    max-width: 500px;
+.feature-video {
+    /* max-width: 1100px; */
     margin: 30px auto;
 }
+
 .video-embed{
     width: 100%;
-    max-width: 500px; 
+    /* max-width: 1100px;  */
     margin: 0 auto;
     aspect-ratio: 16 / 9; /* enforces 1920x1080 (width:height = 16:9) */
     position: relative;
@@ -34,7 +33,6 @@ body{
     border: 0;
     display: block;
 }
-.youtube-iframe{display:none}
 .film-commentary{
     max-width: 900px;
     margin: 20px auto;
@@ -64,6 +62,8 @@ body{
     max-width: 900px;
     margin: 0 auto 60px;
 }
+
+#index-header {
     width: 100%;
     height: 100vh;
     background-image: url(images/light_background.png);
@@ -134,6 +134,13 @@ nav ul li a:hover::after{
     margin-top: 5px;
     margin-bottom: 10px;
     color: #3d82c2;
+}
+
+.medium-text {
+    font-size: 26px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 /* .header-text ol{
@@ -821,6 +828,13 @@ nav ul li a:hover::after{
 .padding {
     padding-bottom: 1.5rem;
 }
+
+/* standard animation project */
+.project-summary {
+    width: 90%;
+    margin: 30px auto;
+}
+
 .creative-media-container {
     padding: 0 5%;
     max-width: 1100px;

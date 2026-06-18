@@ -21,73 +21,29 @@
 
         <main id="portfolio">
             <div class="container">
-                <h1 class="sub-title">Ribboned — Short Animation Film</h1>
+                <h1 class="sub-title about">Ribboned</h1>
+                <h2 class="medium-text">Short hand-drawn animation film</h2>
 
-                <section class="feature-video" data-youtube-id="">
-                    <!--
-                        To use a YouTube-hosted video: set the data-youtube-id attribute on
-                        the .feature-video element (example: data-youtube-id="dQw4w9WgXcQ").
-                        To use a local MP4, leave data-youtube-id empty and place the file
-                        at images/movies/animation.mp4 (or update the src below).
-                    -->
+                <section class="feature-video">
                     <div class="video-embed">
-                        <iframe class="youtube-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none"></iframe>
-                        <video id="local-video" controls poster="images/movies/animation_poster.jpg">
-                            <source src="images/movies/animation.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe src="https://player.vimeo.com/video/1201122675?badge=0&autopause=0&title=0&byline=0&portrait=0"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Ribboned — Short Animation Film"
+                            allowfullscreen></iframe>
                     </div>
                 </section>
-
-                <section class="film-commentary">
-                    <h2>About the Film</h2>
-                    <p>This short animation explores themes of memory and motion through handcrafted ribbon-like characters. It was produced over X months using [tools/process]. Below are selected frames and notes about the creative and technical approach.</p>
+                
+                <section class="project-summary">
+                    <div class="description">
+                        <p>A folklorico dancer constrained by her ribbon skirt and a quetzal bird tethered back move in parallel, entangled in a shared struggle for freedom.</p>
+                    </div>
                 </section>
+                
 
-                <section class="film-gallery">
-                    <article class="film-item">
-                        <img src="images/movies/ribboned_frame1.jpg" alt="Ribboned frame 1">
-                        <div class="film-caption">Opening frame — establishing the ribbon landscape.</div>
-                    </article>
-                    <article class="film-item">
-                        <img src="images/movies/ribboned_frame2.jpg" alt="Ribboned frame 2">
-                        <div class="film-caption">Mid-sequence — character interaction and timing notes.</div>
-                    </article>
-                    <article class="film-item">
-                        <img src="images/movies/ribboned_frame3.jpg" alt="Ribboned frame 3">
-                        <div class="film-caption">Finale — compositing and color grading details.</div>
-                    </article>
-                </section>
-
-                <section class="film-notes">
-                    <h3>Production Notes</h3>
-                    <ul>
-                        <li>Software: Toon Boom Harmony, After Effects</li>
-                        <li>Duration: 3 minutes</li>
-                        <li>Roles: Director, Animator, Compositor</li>
-                    </ul>
-                </section>
+                
             </div>
         </main>
-        <script>
-            // Toggle between YouTube embed and local video depending on data attribute
-            (function(){
-                const feature = document.querySelector('.feature-video');
-                if(!feature) return;
-                const ytId = feature.getAttribute('data-youtube-id')?.trim();
-                const iframe = feature.querySelector('.youtube-iframe');
-                const local = feature.querySelector('#local-video');
-                if(ytId){
-                    const src = `https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1`;
-                    iframe.src = src;
-                    iframe.style.display = 'block';
-                    if(local) local.style.display = 'none';
-                } else {
-                    // show local video (default)
-                    if(iframe) iframe.style.display = 'none';
-                    if(local) local.style.display = 'block';
-                }
-            })();
-        </script>
     </body>
 </html>

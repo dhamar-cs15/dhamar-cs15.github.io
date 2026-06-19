@@ -913,20 +913,70 @@ nav ul li a:hover::after{
   margin-bottom: 0.25rem;
 }
 
+.project-images-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 3rem 0;
+}
+
 .project-images-layout {
-    flex: 50%;
-    padding: 0 4px;
+    padding: 0;
 }
 
 .project-images-layout img {
     width: 100%;
     height: auto;
     display: block;
-    padding: 4px 0;
+}
+
+.image-text-row {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    margin: 3rem 0 3rem 1rem;
+}
+
+.image-text-row .image-section {
+    flex: 0 0 45%;
+}
+
+.image-text-row .image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-text-row .text-section {
+    flex: 0 0 50%;
 }
 
 .project-section-container {
     margin-top: 4rem;
+}
+
+.project-section-text {
+    text-align: left;
+    line-height: 1.25;
+}
+
+.project-section-text h2 {
+    font-size: 32px;
+    color: #3d82c2;
+    margin: 1rem;
+}
+
+.project-section-text p{
+    font-size: 26px;
+    font-weight: 300;
+    margin: 1rem;
+}
+
+.end-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
 }
 
 .creative-media-container {
@@ -1133,7 +1183,7 @@ video {
 .underline-on-scroll {
   position: relative; 
   display: inline-block; 
-  font-weight: bold;
+  /* font-weight: 400; */
   overflow: visible;
   padding-bottom: 2px;
 }

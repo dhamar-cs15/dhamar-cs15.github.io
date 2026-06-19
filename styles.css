@@ -9,6 +9,10 @@ body{
     background: #fff;
     color: #080808;
 }
+
+.spacer {
+    height: 3rem;
+}
     
 /* Styles for featured film page */
 .feature-video {
@@ -839,7 +843,7 @@ nav ul li a:hover::after{
 }
 
 .project-skills {
-    flex-basis: 40%;
+    flex-basis: 35%;
 }
 
 /* .project-skills-list {
@@ -850,9 +854,10 @@ nav ul li a:hover::after{
 } */
 
 .description {
-    flex-basis: 55%;
+    flex-basis: 60%;
     font-size: 26px;
     font-weight: 300;
+    line-height: 1.25;
 }
 
 .project-skills-list {
@@ -867,10 +872,10 @@ nav ul li a:hover::after{
 
 .project-skills-list li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
     
-    padding: 1.25rem 1.5rem;
+    padding: 10px 5px;
     background: #3d82c2;
     border-radius: 12px;
     
@@ -887,8 +892,8 @@ nav ul li a:hover::after{
 
 .project-skills-list li::before {
   content: ""; 
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 
   background-image: url('images/star_icon.png'); 
@@ -896,7 +901,7 @@ nav ul li a:hover::after{
   background-repeat: no-repeat;
   background-position: center;
 
-  margin-right: 0.75rem; /* Space between bullet and text */
+  margin-left: 1rem; /* Space between bullet and text */
 }
 
 /* Typography styles inside the cards */
@@ -908,8 +913,21 @@ nav ul li a:hover::after{
   margin-bottom: 0.25rem;
 }
 
+.project-images-layout {
+    flex: 50%;
+    padding: 0 4px;
+}
 
+.project-images-layout img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 4px 0;
+}
 
+.project-section-container {
+    margin-top: 4rem;
+}
 
 .creative-media-container {
     padding: 0 5%;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" aria-label="Home"><img src="images/logo.jpg" class="logo" alt="logo"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="art.html">Art</a></li>
+            </ul>
+        </nav>
+
+        <main id="art-page">
+            <h1 class="sub-title">Art & Illustrations</h1>
+            <section class="art-gallery-container">
+                <div class="art-grid">
+                    <div class="art-item"><img src="images/work-1.png" alt="Artwork 1"></div>
+                    <div class="art-item"><img src="images/work-2.png" alt="Artwork 2"></div>
+                    <div class="art-item"><img src="images/work-3.png" alt="Artwork 3"></div>
+                    <div class="art-item"><img src="images/whoop_cover.png" alt="WHOOP artwork"></div>
+                    <div class="art-item"><img src="images/movies_economy.png" alt="Movies visualization artwork"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="art-lightbox" aria-hidden="true">
+        <div class="art-lightbox-content" role="dialog" aria-modal="true">
+            <button class="lightbox-close" aria-label="Close gallery">×</button>
+            <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+            <figure class="lightbox-figure">
+                <img class="lightbox-image" src="" alt="">
+                <figcaption class="lightbox-caption"></figcaption>
+            </figure>
+            <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+        </div>
+    </div>
+
+    <script src="art-gallery.js"></script>
+</body>
+</html>

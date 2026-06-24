@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const galleryImages = Array.from(document.querySelectorAll('.art-grid img'));
+  const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
+  const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
+  const allImages = Array.from(document.querySelectorAll('.art-grid img'));
   const lightbox = document.querySelector('.art-lightbox');
   const lightboxImage = lightbox.querySelector('.lightbox-image');
   const lightboxCaption = lightbox.querySelector('.lightbox-caption');
@@ -9,7 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentIndex = 0;
 
+  const getGalleryImages = () => Array.from(document.querySelectorAll('.tab-panel.active .art-grid img'));
+
   function updateLightbox(index) {
+    const galleryImages = getGalleryImages();
+    if (!galleryImages.length) return;
     currentIndex = (index + galleryImages.length) % galleryImages.length;
     const sourceImage = galleryImages[currentIndex];
     lightboxImage.src = sourceImage.src;
@@ -30,9 +36,37 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  galleryImages.forEach((image, index) => {
-    image.addEventListener('click', () => openLightbox(index));
+  function activateTab(panelId) {
+    tabPanels.forEach((panel) => {
+      const isActive = panel.id === panelId;
+      panel.classList.toggle('active', isActive);
+      panel.toggleAttribute('hidden', !isActive);
+    });
+
+    tabButtons.forEach((button) => {
+      const isActive = button.dataset.target === panelId;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    currentIndex = 0;
+  }
+
+  allImages.forEach((image) => {
+    image.addEventListener('click', () => {
+      const galleryImages = getGalleryImages();
+      const index = galleryImages.indexOf(image);
+      if (index !== -1) {
+        openLightbox(index);
+      }
+    });
   });
+
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => activateTab(button.dataset.target));
+  });
+
+  activateTab('professional-art');
 
   closeButton.addEventListener('click', closeLightbox);
   prevButton.addEventListener('click', () => updateLightbox(currentIndex - 1));

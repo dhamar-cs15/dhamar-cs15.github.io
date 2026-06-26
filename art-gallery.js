@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
   const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
-  const allImages = Array.from(document.querySelectorAll('.art-grid img'));
+  const allImages = Array.from(document.querySelectorAll('.art-column img'));
   const lightbox = document.querySelector('.art-lightbox');
   const lightboxImage = lightbox.querySelector('.lightbox-image');
   const lightboxCaption = lightbox.querySelector('.lightbox-caption');
@@ -11,7 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentIndex = 0;
 
-  const getGalleryImages = () => Array.from(document.querySelectorAll('.tab-panel.active .art-grid img'));
+  const getGalleryImages = () => {
+    const activePanel = document.querySelector('.tab-panel.active');
+    if (!activePanel) return [];
+
+    const columns = Array.from(activePanel.querySelectorAll('.art-column'));
+    if (!columns.length) return [];
+
+    const rows = Math.max(...columns.map((column) => column.querySelectorAll('img').length));
+    const images = [];
+
+    for (let row = 0; row < rows; row += 1) {
+      columns.forEach((column) => {
+        const image = column.querySelectorAll('img')[row];
+        if (image) images.push(image);
+      });
+    }
+
+    return images;
+  };
 
   function updateLightbox(index) {
     const galleryImages = getGalleryImages();

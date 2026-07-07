@@ -10,6 +10,11 @@ body{
     color: #080808;
 }
 
+a.outer-link:hover {
+    color: #3d82c2;; 
+    background-color: #bcdfffc9;
+}
+
 .spacer {
     height: 3rem;
 }

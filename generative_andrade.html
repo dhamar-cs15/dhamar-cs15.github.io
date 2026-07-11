@@ -27,9 +27,9 @@
         <main id="portfolio">
             <div class="container">
                 <div class="whoop-images">
-                    <img src="images/andrade/andrade_2.png" alt="generated andrade design">
+                    <img src="images/andrade/low_abstraction3_ls.png" alt="generated andrade design">
                 </div>
-
+                <div class="spacer"></div>
                 <section class="project-summary">
                     <div class="project-skills">
                         <ul class="project-skills-list">
@@ -44,17 +44,116 @@
                             </li>
                     </div>
                     <div class="description">
-                        <p> What this project explores </p>
-                        <p> what it was made for (es138)</p>
+                        <p>This design generator takes inspiration from Harvard's Memorial Hall architecture and transforms them into optical "rooms" based on Edna Andrade's artwork.</p>
+                        <br>
+                        <p>This was created as a final project for my course ES138: Computation Design Values, an engineering science course taught with the Harvard Graduate School of Design.</p>
                     </div>
                 </section>
 
                 <section class="project-section-container">
                     <div class="project-section-text">
                         <h2>Project Inspiration & Vision</h2>
-                        <p>This project was inspired by Op Artist <a class="outer-link" href="https://www.locksgallery.com/artists/edna-andrade" target="_blank" rel="noopener">Edna Andrade</a>’s artwork, which I aimed to recreate using her shape rules and system while applying a separate source of inspiration. Given that Andrade’s work resembles interior rooms with windows, I decided to turn this perspective outward and use the facade of Harvard’s Memorial Hall as inspiration for the interior designs. </p>
+                        <p>This project was inspired by Op Artist <a class="outer-link" href="https://www.locksgallery.com/artists/edna-andrade" target="_blank" rel="noopener">Edna Andrade</a>’s artwork, which I aimed to recreate using her <span class="highlight-blue">shape rules and system</span> while applying a separate source of inspiration. Given that Andrade’s work resembles interior rooms with windows, I decided to turn this perspective outward and use <span class="highlight-pink">the facade of Harvard’s Memorial Hall</span> as inspiration for the interior designs. </p>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/andrade/andrade_space_dream.jpeg" alt="andrade space dream artwork">
+                                <figcaption>Andrade, Space Dream (1970)</figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/andrade/andrade_geometric5-64.jpeg" alt="andrade geometric artwork">
+                                <figcaption>Andrade, Geometric 5-65 (1965)</figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/andrade/memorial_hall.jpeg" alt="generated design">
+                                <figcaption>Harvard's Memorial Hall</figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </section>
+
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Analyzing Andrade's Geometric System</h2>
+                        <p>In order to understand and recreate Andrade's style, I analyzed the rules used in her artworks, evaluating how she determined how to divide areas of her canvas into calculated sections and where to place certain shapes.</p>
+                        <p>While seemingly random at a viewer's first glance, Andrade’s paintings operate through carefully organized geometric systems with <span class="highlight-blue">principles of modularity.</span></p>
+                        <p>For example, we see that her artpiece <i>Space Dream</i> is divided into 6 major modular regions along the edges of the canvas.</p>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <img src="images/andrade/andrade_geometric_rules1.png" alt="andrade geometric rules analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/andrade_geometric_rules2.png" alt="andrade geometric rules analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/andrade_geometric_rules3.png" alt="andrade geometric rules analysis">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Analyzing Architecture</h2>
+                    </div>
+                    <div class="image-text-row">
+                        <div class="image-section">
+                            <img src="images/andrade/memorial_hall_collage.png" alt="memorial hall analysis">
+                        </div>
+                        <div class="text-section project-section-text">
+                            <p>What architectural features are preserved after transforming a building’s exterior design via a computational grammar and how does this affect the recognizability of the building?</p>
+                            <p><i><span class="highlight-blue">What elements are truly important to a building’s facade?</span></i></p>
+                        </div>
+                    </div>
+                    <div class="project-section-text">
+                        <p>Given that Memorial Hall is an example of Gothic architecture, I spent some time analyzing historical architectural features of Gothic buildings to understand the design principles that shape their structures.</p>
+                        <p>Memorial Hall, like many European Gothic buildings, is characterized by its <span class="highlight-blue">pointed arches, ribbed vaults, lancets, and rose windows</span>. These elements are distributed across the facade using <span class="highlight-pink">rules of repetition, symmetry, and division of levels</span>.</p>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <img src="images/andrade/memorial_hall_analysis1.png" alt="memorial hall analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/memorial_hall_analysis2.png" alt="memorial hall analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/memorial_hall_analysis3.png" alt="memorial hall analysis">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Creating the Program</h2>
+                        <p>The implementation of my project was primarily based on creating a p5.js program that would generate Andrade-style designs based on the extracted features.  
+                            The program featured 3 levels of abstraction: high, medium, and low.</p>
+                    </div>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>High Abstraction</th>
+                                <th>Medium Abstraction</th>
+                                <th>Low Abstraction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data1</td>
+                                <td>Data1</td>
+                                <td>Data1</td>
+                            </tr>
+                            <tr>
+                                <td>Data2</td>
+                                <td>Data2</td>
+                                <td>Data2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
     </body>

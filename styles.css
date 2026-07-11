@@ -12,11 +12,18 @@ body{
 
 a.outer-link:hover {
     color: #3d82c2;; 
-    background-color: #bcdfffc9;
+    background-color: #FFD87D;
 }
 
 .spacer {
     height: 3rem;
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    margin: 20px 0;
 }
     
 /* Styles for featured film page */
@@ -572,8 +579,7 @@ nav ul li a:hover::after{
     font-size: 6rem;
     color: #c3deff;
     text-align: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 1rem;
 }
 
 /* portfolio*/
@@ -1305,25 +1311,43 @@ nav ul li a:hover::after{
     display: block;
 }
 
-.image-text-row {
+.generative-andrade-gallery .project-images-layout {
+    aspect-ratio: auto;
     display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    margin: 2rem 0 2rem 1rem;
+    align-items: center;
+    justify-content: center;    
 }
 
-.image-text-row .image-section {
-    flex: 0 0 50%;
-}
-
-.image-text-row .image-section img {
-    width: 100%;
+.generative-andrade-gallery .project-images-layout img {
+    width: auto;
     height: auto;
-    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
 }
 
-.image-text-row .text-section {
-    flex: 0 0 50%;
+.image-text-row { 
+  display: flex; 
+  gap: 1rem; 
+  align-items: flex-start; 
+  margin: 2rem 0 2rem 1rem; 
+} 
+
+.image-text-row .image-section,
+.image-text-row .text-section { 
+  flex: 1 1 0%; 
+  min-width: 0;   
+} 
+
+.text-section {
+    padding-top: 1rem;
+}
+
+.image-text-row .image-section img { 
+  width: 100%; 
+  height: auto; 
+  display: block; 
 }
 
 @media (max-width: 768px) {

@@ -142,19 +142,114 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Data1</td>
-                                <td>Data1</td>
-                                <td>Data1</td>
+                                <td>More heavily influenced by Andrade’s style and shape rules</td>
+                                <td>Continues to maintain Andrade-style tiles</td>
+                                <td>Less influence from Andrade’s geometric rules and constraints</td>
                             </tr>
                             <tr>
-                                <td>Data2</td>
-                                <td>Data2</td>
-                                <td>Data2</td>
+                                <td>Only colors from Memorial Hall are used</td>
+                                <td>Implements constraints on shape and element placement; embeds more architectural features from Memorial Hall (arcs and lancet openings)</td>
+                                <td>Embeds more features from Memorial Hall (arched opening, rose window, tracery, banners)</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Generated Results</h2>
+                        <p>These are some examples of designs that were generated for each of the defined abstraction levels.</p>
+                    </div>
+                    <div class="image-text-row">
+                        <div class="image-section">
+                            <div class="project-section-text" style="text-align: center;">
+                                <h3>High Abstraction</h3>
+                            </div>
+                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0">
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/high_abstraction1.png" alt="high abstraction image 1">
+                                </div>
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/high_abstraction2.png" alt="high abstraction image 2">
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="image-section">
+                            <div class="project-section-text" style="text-align: center;">
+                                <h3>Medium Abstraction</h3>
+                            </div>
+                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0">
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/mediumAbstraction_archedlancet1.png" alt="high abstraction image 1">
+                                </div>
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/mediumAbstraction_pointedlancet.png" alt="high abstraction image 2">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom row: third category, centered at half width -->
+                    <div style="max-width: 50%; margin-left: auto; margin-right: auto;">
+                        <div class="project-section-text" style="text-align: center;">
+                            <h3>Low Abstraction</h3>
+                        </div>
+                        <figure>
+                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0;">
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/low_abstraction2.png" alt="low abstraction image 1">
+                                    </div>
+                                    <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                        <img src="images/andrade/low_abstraction3.png" alt="low abstraction image 2">
+                                    </div>
+                                </div>
+                            </div>
+                            <figcaption style="margin-top: 1rem;">click on an image to enlarge</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-lightbox" id="simpleLightbox">
+                <div class="art-lightbox-content">
+                    <button class="lightbox-close" id="simpleLightboxClose" aria-label="Close">&times;</button>
+                    <figure class="lightbox-figure">
+                        <img class="lightbox-image" id="simpleLightboxImage" src="" alt="">
+                    </figure>
+                </div>
             </div>
         </main>
     </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('simpleLightbox');
+        const lightboxImage = document.getElementById('simpleLightboxImage');
+        const closeBtn = document.getElementById('simpleLightboxClose');
+
+        document.querySelectorAll('.project-images-layout img').forEach((img) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt || '';
+            lightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightboxImage.src = '';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+        });
+    </script>
 </html>

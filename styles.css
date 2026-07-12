@@ -20,10 +20,26 @@ a.outer-link:hover {
 }
 
 .project-table {
-    width: 100%;
+    width: 90%;
+    margin: 20px auto;
     border-collapse: collapse;
     font-family: sans-serif;
-    margin: 20px 0;
+}
+
+.project-table th,
+.project-table td {
+    width: 33.33%;
+    text-align: center;
+    padding: 15px;
+}
+
+.project-table thead tr {
+    background-color: #3d82c2;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #c3deff;
 }
     
 /* Styles for featured film page */
@@ -1380,6 +1396,12 @@ nav ul li a:hover::after{
 .project-section-text h2 {
     font-size: 32px;
     color: #3d82c2;
+    margin: 1rem;
+}
+
+.project-section-text h3 {
+    font-size: 28px;
+    color: #8cb9f1;
     margin: 1rem;
 }
 

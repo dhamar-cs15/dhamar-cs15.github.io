@@ -4,11 +4,13 @@ const cursorSpan = document.querySelector(".cursor");
 const textArray = [
     ["I'm studying ", {text: "Computer Science", class: "highlight-blue"}, " and ", {text: "Government", class: "highlight-pink"}, " @ Harvard"],
     [{text: "UI/UX Designer,", class: "highlight-blue"}, " Software Developer, ", {text: "Artist", class: "highlight-pink"}],
-    ["I absolutely ", {text: "LOVE", class: "highlight-pink"}, " stories and reading. Current read: ", {text: "Mistborn: Secret History", class: "highlight-blue"}],
+    ["I absolutely ", {text: "LOVE", class: "highlight-pink"}, " stories and reading. Current read: ", {text: "The Emperor's Soul", class: "highlight-blue"}],
     ["A retired ", {text: "astronomy", class: "highlight-blue"}, " nerd ✨"],
     ["Up at 3am learning to ", {text: "animate", class: "highlight-pink"}],
     [{text: "Hola,", class: "highlight-pink"}, " Bonjour, 你好, Hei, こんにちは! Also learning ", {text: "languages", class: "highlight-blue"}, " at 3am"]
 ];
+
+// read history: Mistborn: Secret History
 
 const typingDelay = 30;
 const erasingDelay = 35;

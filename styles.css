@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
     box-sizing: border-box;
 }
 
@@ -431,7 +431,7 @@ nav ul li a:hover::after{
 .medium-text {
     font-size: 26px;
     margin-bottom: 3rem;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 1.5;
 }
 
@@ -602,6 +602,7 @@ nav ul li a:hover::after{
 }
 
 .page-header h1 {
+    font-family: 'Candara', sans-serif;
     font-size: 6rem;
     color: #c3deff;
     text-align: center;
@@ -1237,7 +1238,7 @@ nav ul li a:hover::after{
 .description {
     flex-basis: 60%;
     font-size: 26px;
-    font-weight: 300;
+    font-weight: 100;
     line-height: 1.25;
 }
 
@@ -1417,7 +1418,7 @@ nav ul li a:hover::after{
 
 .project-section-text p{
     font-size: 26px;
-    font-weight: 300;
+    font-weight: 200;
     margin: 0 1rem 1rem 1rem;
 }
 

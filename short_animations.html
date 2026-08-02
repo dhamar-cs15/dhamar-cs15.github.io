@@ -25,18 +25,20 @@
                 <h1 class="sub-title about">Short Animation Clips</h1>
                 <section class="animation-video-embed">
                     <div class="video-embed">
-                        <iframe width="560" height="315" 
+                        <iframe id="video-player" width="560" height="315" 
                         src="https://www.youtube.com/embed/giiEpRClE8k?si=2x0g9RVDW7E0RMAT" 
                         title="YouTube video player" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        rel=0 controls=0 modestbranding=1
+                        allowfullscreen>
                     </iframe>
                     </div>
                 </section>
 
                 <div class="card-section">
                     <div class="card-container">
-                        <article class="card-article">
+                        <article class="card-article video-trigger" data-video-url="https://www.youtube.com/embed/giiEpRClE8k?si=2x0g9RVDW7E0RMAT">
                             <img src="images/ribboned_cover.png" alt="ribboned">
 
                             <div class="card-data">
@@ -68,5 +70,18 @@
             </div>
         </main>
     </div>
+
+    <script>
+        const videoPlayer = document.getElementById('video-player');
+        const cards = document.querySelectorAll('video-trigger');
+
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const activeVideoUrl = this.getAttribute('data-video-url');
+
+                videoPlayer.src = activeVideoUrl;
+            });
+        });
+    </script>
 </body>
 </html>

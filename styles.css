@@ -1954,15 +1954,8 @@ figcaption.upper-caption {
     margin-bottom: .75rem;
 }
 
-.card-button {
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    color: black;
-}
-
-.card-button:hover {
-    text-decoration: underline;
+.card-article.video-trigger {
+    cursor: pointer;
 }
 
 .card-article:hover .card-data {

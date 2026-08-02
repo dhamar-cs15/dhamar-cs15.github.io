@@ -1928,12 +1928,12 @@ figcaption.upper-caption {
 
 .card-data {
     width: 100px;
-    background-color: rgba(207, 236, 255, 0.66);
-    padding: 1.5rem 2rem;
+    background-color: rgba(207, 236, 255, 0.817);
+    padding: 1rem 2rem;
     box-shadow: 0 8px 24px hsla(0, 14%, 36%, 0.15);
     border-radius: 1rem;
     position: absolute;
-    bottom: -8rem;
+    bottom: -9rem;
     left: 0;
     right: 0;
     margin-inline: auto;

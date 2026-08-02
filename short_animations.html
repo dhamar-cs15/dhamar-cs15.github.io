@@ -39,7 +39,7 @@
 
                 <div class="card-section">
                     <div class="card-container">
-                        <article class="card-article video-trigger" data-video-url="https://www.youtube.com/embed/giiEpRClE8k?si=2x0g9RVDW7E0RMAT">
+                        <article class="card-article video-trigger" role="button" tabindex="0" data-video-url="https://www.youtube.com/embed/giiEpRClE8k?si=2x0g9RVDW7E0RMAT">
                             <img src="images/ribboned_cover.png" alt="ribboned">
 
                             <div class="card-data">
@@ -48,7 +48,7 @@
                             </div>
                         </article>
 
-                        <article class="card-article video-trigger" data-video-url="https://www.youtube.com/embed/R6S3M9nhOBk?si=oil_9c6fRgw--McG">
+                        <article class="card-article video-trigger" role="button" tabindex="0" data-video-url="https://www.youtube.com/embed/R6S3M9nhOBk?si=oil_9c6fRgw--McG">
                             <img src="images/ribboned_cover.png" alt="ribboned">
 
                             <div class="card-data">
@@ -57,7 +57,7 @@
                             </div>
                         </article>
 
-                        <article class="card-article video-trigger" data-video-url="https://www.youtube.com/embed/POB8aNEWVts?si=X0hSGyFcVBcDJd2I">
+                        <article class="card-article video-trigger" role="button" tabindex="0" data-video-url="https://www.youtube.com/embed/POB8aNEWVts?si=X0hSGyFcVBcDJd2I">
                             <img src="images/ribboned_cover.png" alt="ribboned">
 
                             <div class="card-data">
@@ -74,7 +74,7 @@
 
     <script>
         const videoPlayer = document.getElementById('video-player');
-        const cards = document.querySelectorAll('video-trigger');
+        const cards = document.querySelectorAll('.video-trigger');
 
         cards.forEach(card => {
             card.addEventListener('click', function() {

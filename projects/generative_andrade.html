@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../">
+        <title>Generative Andrade</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Bellota Text' rel='stylesheet'>
+    </head>
+
+    <body>
+        <!-- <div class="container"> -->
+        <div class="background-gradient">
+            <nav>
+                <a href="index.html" aria-label="Home"><img src="images/name_logo.png" class="logo" alt="logo"></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="art.html">Art</a></li>
+                </ul>
+            </nav>
+        <!-- </div> -->
+
+
+        <div class="page-header">
+            <h1>Generating Architecture as Space Rooms</h1>
+        </div>
+        <main id="portfolio">
+            <div class="container">
+                <div class="iframe-container">
+                    <iframe src="./es138_project/index.html" width="100%" height="500px" title="Embedded Page"></iframe>
+                </div>
+
+                <div class="spacer"></div>
+                <section class="project-summary">
+                    <div class="project-skills">
+                        <ul class="project-skills-list">
+                            <li>
+                                <strong>p5.js</strong>
+                            </li>
+                            <li>
+                                <strong>Computational Design</strong>
+                            </li>
+                            <li>
+                                <strong>Generative Art</strong>
+                            </li>
+                    </div>
+                    <div class="description">
+                        <p>This design generator takes inspiration from Harvard's Memorial Hall architecture and transforms them into optical "rooms" based on Edna Andrade's artwork.</p>
+                        <br>
+                        <p>This was created as a final project for my course ES138: Computation Design Values, an engineering science course taught with the Harvard Graduate School of Design.</p>
+                    </div>
+                </section>
+
+                <section class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Project Inspiration & Vision</h2>
+                        <p>This project was inspired by Op Artist <a class="outer-link" href="https://www.locksgallery.com/artists/edna-andrade" target="_blank" rel="noopener">Edna Andrade</a>’s artwork, which I aimed to recreate using her <span class="highlight-blue">shape rules and system</span> while applying a separate source of inspiration. Given that Andrade’s work resembles interior rooms with windows, I decided to turn this perspective outward and use <span class="highlight-pink">the facade of Harvard’s Memorial Hall</span> as inspiration for the interior designs. </p>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/andrade/andrade_space_dream.jpeg" alt="andrade space dream artwork">
+                                <figcaption>Andrade, Space Dream (1970)</figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/andrade/andrade_geometric5-64.jpeg" alt="andrade geometric artwork">
+                                <figcaption>Andrade, Geometric 5-65 (1965)</figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/andrade/memorial_hall.jpeg" alt="generated design">
+                                <figcaption>Harvard's Memorial Hall</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Analyzing Andrade's Geometric System</h2>
+                        <p>In order to understand and recreate Andrade's style, I analyzed the rules used in her artworks, evaluating how she determined how to divide areas of her canvas into calculated sections and where to place certain shapes.</p>
+                        <p>While seemingly random at a viewer's first glance, Andrade’s paintings operate through carefully organized geometric systems with <span class="highlight-blue">principles of modularity.</span></p>
+                        <p>For example, we see that her artpiece <i>Space Dream</i> is divided into 6 major modular regions along the edges of the canvas.</p>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <img src="images/andrade/andrade_geometric_rules1.png" alt="andrade geometric rules analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/andrade_geometric_rules2.png" alt="andrade geometric rules analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/andrade_geometric_rules3.png" alt="andrade geometric rules analysis">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Analyzing Architecture</h2>
+                    </div>
+                    <div class="image-text-row">
+                        <div class="image-section">
+                            <img src="images/andrade/memorial_hall_collage.png" alt="memorial hall analysis">
+                        </div>
+                        <div class="text-section project-section-text">
+                            <p>What architectural features are preserved after transforming a building’s exterior design via a computational grammar and how does this affect the recognizability of the building?</p>
+                            <p><i><span class="highlight-blue">What elements are truly important to a building’s facade?</span></i></p>
+                        </div>
+                    </div>
+                    <div class="project-section-text">
+                        <p>Given that Memorial Hall is an example of Gothic architecture, I spent some time analyzing historical architectural features of Gothic buildings to understand the design principles that shape their structures.</p>
+                        <p>Memorial Hall, like many European Gothic buildings, is characterized by its <span class="highlight-blue">pointed arches, ribbed vaults, lancets, and rose windows</span>. These elements are distributed across the facade using <span class="highlight-pink">rules of repetition, symmetry, and division of levels</span>.</p>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <img src="images/andrade/memorial_hall_analysis1.png" alt="memorial hall analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/memorial_hall_analysis2.png" alt="memorial hall analysis">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/andrade/memorial_hall_analysis3.png" alt="memorial hall analysis">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Creating the Program</h2>
+                        <p>The implementation of my project was primarily based on creating a p5.js program that would generate Andrade-style designs based on the extracted features.  
+                            The program featured 3 levels of abstraction: high, medium, and low.</p>
+                    </div>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>High Abstraction</th>
+                                <th>Medium Abstraction</th>
+                                <th>Low Abstraction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>More heavily influenced by Andrade’s style and shape rules</td>
+                                <td>Continues to maintain Andrade-style tiles</td>
+                                <td>Less influence from Andrade’s geometric rules and constraints</td>
+                            </tr>
+                            <tr>
+                                <td>Only colors from Memorial Hall are used</td>
+                                <td>Implements constraints on shape and element placement; embeds more architectural features from Memorial Hall (arcs and lancet openings)</td>
+                                <td>Embeds more features from Memorial Hall (arched opening, rose window, tracery, banners)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Generated Results</h2>
+                        <p>These are some examples of designs that were generated for each of the defined abstraction levels.</p>
+                    </div>
+                    <div class="image-text-row">
+                        <div class="image-section">
+                            <div class="project-section-text" style="text-align: center;">
+                                <h3>High Abstraction</h3>
+                            </div>
+                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0">
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/high_abstraction1.png" alt="high abstraction image 1">
+                                </div>
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/high_abstraction2.png" alt="high abstraction image 2">
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="image-section">
+                            <div class="project-section-text" style="text-align: center;">
+                                <h3>Medium Abstraction</h3>
+                            </div>
+                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0">
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/mediumAbstraction_archedlancet1.png" alt="high abstraction image 1">
+                                </div>
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/mediumAbstraction_pointedlancet.png" alt="high abstraction image 2">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom row: third category, centered at half width -->
+                    <div style="max-width: 50%; margin-left: auto; margin-right: auto;">
+                        <div class="project-section-text" style="text-align: center;">
+                            <h3>Low Abstraction</h3>
+                        </div>
+                        <figure>
+                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0;">
+                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                    <img src="images/andrade/low_abstraction2.png" alt="low abstraction image 1">
+                                    </div>
+                                    <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
+                                        <img src="images/andrade/low_abstraction3.png" alt="low abstraction image 2">
+                                    </div>
+                                </div>
+                            </div>
+                            <figcaption style="margin-top: 1rem;">click on an image to enlarge</figcaption>
+                        </figure>
+                    </div>
+
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Evaluation and Next Steps</h2>
+                        <p>One of my favorite aspects of this project was analyzing how strategic and computational Andrade's artwork was, as opposed to my first impression that the placing of shapes was simple and straightforward.</p>
+                        <p>This is an important characteristic of rule-based design: it tends to be <span class="highlight-blue">computational and systematic</span> in order for it to appear <span class="highlight-pink">as natural to viewer as possible.</span></p>
+                    </div>
+                    <div class="image-text-row">
+                        <div class="text-section project-section-text">
+                            <p>The next steps in this project would be to implement a cleaner user interface and additional user interactions.</p>
+                            <p>These additional interactions would allow the user to select the building from which design elements will be generated, as well as setting certain parameters to modify the designs.</p>
+                        </div>
+                        <div class="image-section">
+                            <img src="images/andrade/ui_nextsteps.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Finding the Beauty in Rule-Based Art</h2>
+                        <p>Many may assume that rule-based generative art is restricted because it is behaves within a limited set of rules. 
+                            Yet, artworks such as Edna Andrade's and generative programs such as this one demonstrate that the opposite is true: these systems inspire the creation of an infinite amount of designs made possible due to controlled randomness.</p>
+                        <p>Generative systems and rule-based art have roots that long pre-date computers and even algorithms. You can find them in the geometric tile artworks of 8th-century Islamic architecture, the petals of an intricate rose, and the fractals of a unique snowflake.</p>
+                        <p>Next time you see a repetitive pattern or geometric artwork, think: how would you change it? <span class="underline-on-scroll">Even one seemingly small and simple change can open up the door to an infinite number of new, distinct designs.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            </main>
+        </div>
+            <div class="end-image">
+                <img src="images/andrade/andrade_endimage.png" alt="">
+            </div>
+
+            <div class="art-lightbox" id="simpleLightbox">
+                <div class="art-lightbox-content">
+                    <button class="lightbox-close" id="simpleLightboxClose" aria-label="Close">&times;</button>
+                    <figure class="lightbox-figure">
+                        <img class="lightbox-image" id="simpleLightboxImage" src="" alt="">
+                    </figure>
+                </div>
+            </div>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('simpleLightbox');
+        const lightboxImage = document.getElementById('simpleLightboxImage');
+        const closeBtn = document.getElementById('simpleLightboxClose');
+
+        document.querySelectorAll('.project-images-layout img').forEach((img) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt || '';
+            lightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightboxImage.src = '';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+        });
+    </script>
+    <script src="scroll-effects.js"></script>
+</html>

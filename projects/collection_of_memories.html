@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles.css">
         <base href="../">
         <title>Collection of Memories</title>
-        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link href='https://fonts.googleapis.com/css?family=Bellota Text' rel='stylesheet'>
     </head>
@@ -30,53 +30,58 @@
         </div>
         <main id="portfolio">
             <div class="container">
+                <div class="w2w-images">
+                        <img src="./images/dorm_room3d/dorm_model_render.png" alt="wecode-header-image">
+                    </div>
                 <div class="iframe-container">
                     <iframe src="https://dhamar-cs15.github.io/dorm-room3d" width="100%" height="500px" title="Embedded Page"></iframe>
                 </div>
+                <a class="iframe-launch-button" href="https://dhamar-cs15.github.io/dorm-room3d" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    Open in new tab
+                </a>
+
+                <!-- full render of room image -->
+
 
                 <div class="spacer"></div>
                 <section class="project-summary">
                     <div class="project-skills">
                         <ul class="project-skills-list">
                             <li>
-                                <strong>p5.js</strong>
+                                <strong>3D Modeling</strong>
                             </li>
                             <li>
-                                <strong>Computational Design</strong>
+                                <strong>Three.js</strong>
                             </li>
                             <li>
-                                <strong>Generative Art</strong>
+                                <strong>Interactive Design</strong>
                             </li>
                     </div>
                     <div class="description">
-                        <p>This design generator takes inspiration from Harvard's Memorial Hall architecture and transforms them into optical "rooms" based on Edna Andrade's artwork.</p>
+                        <p>Inspired by my college dorm, this room model explores a collection of memories through souvenirs and personal items.</p>
                         <br>
-                        <p>This was created as a final project for my course ES138: Computation Design Values, an engineering science course taught with the Harvard Graduate School of Design.</p>
+                        <p>The goal was to create an experience that felt interactive and welcoming, a snapshot into my personal life. A large part of this project was the process of translating the model from a static Blender model to an interactive web experience.</p>
                     </div>
                 </section>
 
                 <section class="project-section-container">
                     <div class="project-section-text">
                         <h2>Project Inspiration & Vision</h2>
-                        <p>This project was inspired by Op Artist <a class="outer-link" href="https://www.locksgallery.com/artists/edna-andrade" target="_blank" rel="noopener">Edna Andrade</a>’s artwork, which I aimed to recreate using her <span class="highlight-blue">shape rules and system</span> while applying a separate source of inspiration. Given that Andrade’s work resembles interior rooms with windows, I decided to turn this perspective outward and use <span class="highlight-pink">the facade of Harvard’s Memorial Hall</span> as inspiration for the interior designs. </p>
+                        <p>After graduating from college, I found myself searching for images of my full dorm-room in my camera roll but could only find separate snapshots of particular corners or small areas.</p>
+                        <p>In those early days of reminiscing a place I had made my own, I decided to take it to Blender to recreate it virtually, where it could exist as a whole.</p>
                     </div>
                     <div class="project-images-grid generative-andrade-gallery">
                         <div class="project-images-layout">
                             <figure>
-                                <img src="images/andrade/andrade_space_dream.jpeg" alt="andrade space dream artwork">
-                                <figcaption>Andrade, Space Dream (1970)</figcaption>
+                                <img src="images/dorm_room3d/dorm_room_blender_viewport.png" alt="2D sketch">
+                                <figcaption>2D sketch plan (Procreate)</figcaption>
                             </figure>
                         </div>
                         <div class="project-images-layout">
                             <figure>
-                                <img src="images/andrade/andrade_geometric5-64.jpeg" alt="andrade geometric artwork">
-                                <figcaption>Andrade, Geometric 5-65 (1965)</figcaption>
-                            </figure>
-                        </div>
-                        <div class="project-images-layout">
-                            <figure>
-                                <img src="images/andrade/memorial_hall.jpeg" alt="generated design">
-                                <figcaption>Harvard's Memorial Hall</figcaption>
+                                <img src="images/dorm_room3d/dorm_room_blender_viewport.png" alt="blender unrendered model">
+                                <figcaption>3D Modeling Process (Blender)</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -84,27 +89,23 @@
 
                 <div class="project-section-container">
                     <div class="project-section-text">
-                        <h2>Analyzing Andrade's Geometric System</h2>
-                        <p>In order to understand and recreate Andrade's style, I analyzed the rules used in her artworks, evaluating how she determined how to divide areas of her canvas into calculated sections and where to place certain shapes.</p>
-                        <p>While seemingly random at a viewer's first glance, Andrade’s paintings operate through carefully organized geometric systems with <span class="highlight-blue">principles of modularity.</span></p>
-                        <p>For example, we see that her artpiece <i>Space Dream</i> is divided into 6 major modular regions along the edges of the canvas.</p>
+                        <h2>3D Look Development</h2>
+                        <p>Most of the time I spent in my room was in the evenings, where I had my lamp on and the room took on a warm lighting of coziness.</p>
+                        <p>The items I chose to recreate in this 3D model were made of a variety of different materials, including glass, metal, paper, and wood. It was important to replicate the behaviors of each material using different textures and thinking about how each should react to the room's lighting.</p>
                     </div>
                     <div class="project-images-grid generative-andrade-gallery">
                         <div class="project-images-layout">
-                            <img src="images/andrade/andrade_geometric_rules1.png" alt="andrade geometric rules analysis">
+                            <img src="images/dorm_room3d/dorm_room_deskcorner.png" alt="render of desk corner and lamp">
                         </div>
                         <div class="project-images-layout">
-                            <img src="images/andrade/andrade_geometric_rules2.png" alt="andrade geometric rules analysis">
-                        </div>
-                        <div class="project-images-layout">
-                            <img src="images/andrade/andrade_geometric_rules3.png" alt="andrade geometric rules analysis">
+                            <img src="images/dorm_room3d/dorm_room_shelfSouvenir.png" alt="render of souvenir shelf">
                         </div>
                     </div>
                 </div>
 
                 <div class="project-section-container">
                     <div class="project-section-text">
-                        <h2>Analyzing Architecture</h2>
+                        <h2>From Blender to Three.js</h2>
                     </div>
                     <div class="image-text-row">
                         <div class="image-section">

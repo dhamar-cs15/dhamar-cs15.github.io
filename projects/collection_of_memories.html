@@ -31,16 +31,13 @@
         <main id="portfolio">
             <div class="container">
                 <div class="w2w-images">
-                        <img src="./images/dorm_room3d/dorm_model_render.png" alt="wecode-header-image">
-                    </div>
-                <div class="iframe-container">
-                    <iframe src="https://dhamar-cs15.github.io/dorm-room3d" width="100%" height="500px" title="Embedded Page"></iframe>
+                    <img src="./images/dorm_room3d/dorm_model_render.png" alt="wecode-header-image">
                 </div>
                 <a class="iframe-launch-button" href="https://dhamar-cs15.github.io/dorm-room3d" target="_blank" rel="noopener noreferrer">
                     <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                    Open in new tab
+                    Launch the 3D Interactive Project Here
                 </a>
-
+                
                 <!-- full render of room image -->
 
 
@@ -106,156 +103,92 @@
                 <div class="project-section-container">
                     <div class="project-section-text">
                         <h2>From Blender to Three.js</h2>
-                    </div>
-                    <div class="image-text-row">
-                        <div class="image-section">
-                            <img src="images/andrade/memorial_hall_collage.png" alt="memorial hall analysis">
-                        </div>
+                        <div class="image-text-row image-text-row-image-35">
                         <div class="text-section project-section-text">
-                            <p>What architectural features are preserved after transforming a building’s exterior design via a computational grammar and how does this affect the recognizability of the building?</p>
-                            <p><i><span class="highlight-blue">What elements are truly important to a building’s facade?</span></i></p>
+                            <p>In order to make this model interactive as a web experience, it had to be translated from its native state in Blender to objects that could be accessed through a live page. The process in Blender involved UV unwrapping the models and baking their textures in order to preserve their geometries, colors, and materials' lighting behaviors.</p>
                         </div>
-                    </div>
-                    <div class="project-section-text">
-                        <p>Given that Memorial Hall is an example of Gothic architecture, I spent some time analyzing historical architectural features of Gothic buildings to understand the design principles that shape their structures.</p>
-                        <p>Memorial Hall, like many European Gothic buildings, is characterized by its <span class="highlight-blue">pointed arches, ribbed vaults, lancets, and rose windows</span>. These elements are distributed across the facade using <span class="highlight-pink">rules of repetition, symmetry, and division of levels</span>.</p>
+                        <div class="image-section">
+                            <img src="images/dorm_room3d/dorm_room_deskMugBake.jpg" alt="memorial hall analysis">
+                        </div>
                     </div>
                     <div class="project-images-grid generative-andrade-gallery">
                         <div class="project-images-layout">
-                            <img src="images/andrade/memorial_hall_analysis1.png" alt="memorial hall analysis">
+                            <img src="images/dorm_room3d/dorm_room_uv_texture_teacup.png" alt="render of desk corner and lamp">
                         </div>
-                        <div class="project-images-layout">
-                            <img src="images/andrade/memorial_hall_analysis2.png" alt="memorial hall analysis">
-                        </div>
-                        <div class="project-images-layout">
-                            <img src="images/andrade/memorial_hall_analysis3.png" alt="memorial hall analysis">
-                        </div>
-                    </div>
-                </div>
-                <div class="project-section-container">
-                    <div class="project-section-text">
-                        <h2>Creating the Program</h2>
-                        <p>The implementation of my project was primarily based on creating a p5.js program that would generate Andrade-style designs based on the extracted features.  
-                            The program featured 3 levels of abstraction: high, medium, and low.</p>
-                    </div>
-                    <table class="project-table">
-                        <thead>
-                            <tr>
-                                <th>High Abstraction</th>
-                                <th>Medium Abstraction</th>
-                                <th>Low Abstraction</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>More heavily influenced by Andrade’s style and shape rules</td>
-                                <td>Continues to maintain Andrade-style tiles</td>
-                                <td>Less influence from Andrade’s geometric rules and constraints</td>
-                            </tr>
-                            <tr>
-                                <td>Only colors from Memorial Hall are used</td>
-                                <td>Implements constraints on shape and element placement; embeds more architectural features from Memorial Hall (arcs and lancet openings)</td>
-                                <td>Embeds more features from Memorial Hall (arched opening, rose window, tracery, banners)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="project-section-container">
-                    <div class="project-section-text">
-                        <h2>Generated Results</h2>
-                        <p>These are some examples of designs that were generated for each of the defined abstraction levels.</p>
-                    </div>
-                    <div class="image-text-row">
-                        <div class="image-section">
-                            <div class="project-section-text" style="text-align: center;">
-                                <h3>High Abstraction</h3>
-                            </div>
-                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0">
-                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
-                                    <img src="images/andrade/high_abstraction1.png" alt="high abstraction image 1">
-                                </div>
-                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
-                                    <img src="images/andrade/high_abstraction2.png" alt="high abstraction image 2">
-                                </div>
-                            </div>
-                        </div>
-
-                       <div class="image-section">
-                            <div class="project-section-text" style="text-align: center;">
-                                <h3>Medium Abstraction</h3>
-                            </div>
-                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0">
-                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
-                                    <img src="images/andrade/mediumAbstraction_archedlancet1.png" alt="high abstraction image 1">
-                                </div>
-                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
-                                    <img src="images/andrade/mediumAbstraction_pointedlancet.png" alt="high abstraction image 2">
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
-                    <!-- Bottom row: third category, centered at half width -->
-                    <div style="max-width: 50%; margin-left: auto; margin-right: auto;">
-                        <div class="project-section-text" style="text-align: center;">
-                            <h3>Low Abstraction</h3>
-                        </div>
-                        <figure>
-                            <div class="project-images-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 0 0;">
-                                <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
-                                    <img src="images/andrade/low_abstraction2.png" alt="low abstraction image 1">
-                                    </div>
-                                    <div class="project-images-layout" style="aspect-ratio: 1 / 1;">
-                                        <img src="images/andrade/low_abstraction3.png" alt="low abstraction image 2">
-                                    </div>
-                                </div>
-                            </div>
-                            <figcaption style="margin-top: 1rem;">click on an image to enlarge</figcaption>
-                        </figure>
-                    </div>
-
-                <div class="project-section-container">
-                    <div class="project-section-text">
-                        <h2>Evaluation and Next Steps</h2>
-                        <p>One of my favorite aspects of this project was analyzing how strategic and computational Andrade's artwork was, as opposed to my first impression that the placing of shapes was simple and straightforward.</p>
-                        <p>This is an important characteristic of rule-based design: it tends to be <span class="highlight-blue">computational and systematic</span> in order for it to appear <span class="highlight-pink">as natural to viewer as possible.</span></p>
-                    </div>
                     <div class="image-text-row">
                         <div class="text-section project-section-text">
-                            <p>The next steps in this project would be to implement a cleaner user interface and additional user interactions.</p>
-                            <p>These additional interactions would allow the user to select the building from which design elements will be generated, as well as setting certain parameters to modify the designs.</p>
+                            <p>Afterwards, I began organizing the objects on a webpage using the 3D graphics Javascript library three.js, allowing them to exist in a 3D world outside of Blender.</p>
+                            <p>One of the main challenges of this was programming the camera and mouse controls so that users were able to navigate through the room using their trackpad while staying within designated bounds.</p>
                         </div>
                         <div class="image-section">
-                            <img src="images/andrade/ui_nextsteps.png" alt="">
+                            <img src="images/dorm_room3d/dorm_room_camera_controls.gif" alt="camera controls turnaround gif">
                         </div>
                     </div>
+                    
                 </div>
                 <div class="project-section-container">
                     <div class="project-section-text">
-                        <h2>Finding the Beauty in Rule-Based Art</h2>
-                        <p>Many may assume that rule-based generative art is restricted because it is behaves within a limited set of rules. 
-                            Yet, artworks such as Edna Andrade's and generative programs such as this one demonstrate that the opposite is true: these systems inspire the creation of an infinite amount of designs made possible due to controlled randomness.</p>
-                        <p>Generative systems and rule-based art have roots that long pre-date computers and even algorithms. You can find them in the geometric tile artworks of 8th-century Islamic architecture, the petals of an intricate rose, and the fractals of a unique snowflake.</p>
-                        <p>Next time you see a repetitive pattern or geometric artwork, think: how would you change it? <span class="underline-on-scroll">Even one seemingly small and simple change can open up the door to an infinite number of new, distinct designs.</span></p>
+                        <h2>Interaction Delivery</h2>
+                        <p>The final step was adding biographies to the main objects in the room. This model allows you to hover over an object and click to read a bit about what makes this object special to me. Some of them have even inspired art that is linked in their bios.</p>
+                        <br>
+                        <p>View the video walk-through or test out the room model for yourself below!</p>
                     </div>
                 </div>
-            </div>
+
+                <section class="animation-video-embed collection-video-embed">
+                    <div class="video-embed">
+                           <iframe 
+                            id="video-player" 
+                            src="https://www.youtube.com/embed/giiEpRClE8k?si=2x0g9RVDW7E0RMAT?autoplay=1&mute=1" 
+                            title="Dorm Room Walkthrough" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; mute; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                            </iframe>
+                    </div>
+                </section>
+                <br>
+                <div class="project-section-text">
+                    <p>Live Room Model:</p>
+                </div>
+                <div class="iframe-container">
+                    <iframe src="https://dhamar-cs15.github.io/dorm-room3d" width="100%" height="500px" title="Embedded Page"></iframe>
+                </div>
+                <a class="iframe-launch-button" href="https://dhamar-cs15.github.io/dorm-room3d" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    Open in new tab
+                </a>
+
+                <div class="project-section-container">
+                    <div class="image-text-row">
+                        <div class="text-section project-section-text">
+                            <h2>Final Thoughts</h2>
+                            <p>The result of this project was an interactive room that was able to exist outside of Blender and allowed users to explore it in a 3D environment powered by three.js. This virtual model successfully models my college dorm in a way that feels complete, warm, and like a representation of my time at Harvard.</p>
+                        </div>
+                        <div class="image-section">
+                            <img src="images/dorm_room3d/dormroom_sideview.png" alt="memorial hall analysis">
+                        </div>
+                    </div>
+                </div>
+                
 
             </main>
         </div>
-            <div class="end-image">
-                <img src="images/andrade/andrade_endimage.png" alt="">
-            </div>
+        <div class="end-image">
+            <img src="images/andrade/andrade_endimage.png" alt="">
+        </div>
 
-            <div class="art-lightbox" id="simpleLightbox">
-                <div class="art-lightbox-content">
-                    <button class="lightbox-close" id="simpleLightboxClose" aria-label="Close">&times;</button>
-                    <figure class="lightbox-figure">
-                        <img class="lightbox-image" id="simpleLightboxImage" src="" alt="">
-                    </figure>
-                </div>
+        <div class="art-lightbox" id="simpleLightbox">
+            <div class="art-lightbox-content">
+                <button class="lightbox-close" id="simpleLightboxClose" aria-label="Close">&times;</button>
+                <figure class="lightbox-figure">
+                    <img class="lightbox-image" id="simpleLightboxImage" src="" alt="">
+                </figure>
             </div>
+        </div>
     </body>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

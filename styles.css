@@ -98,6 +98,13 @@ tr:nth-child(even) {
     display: block;
 }
 
+.collection-video-embed .video-embed {
+    width: 100%;
+    height: 500px;
+    aspect-ratio: auto;
+    border-radius: 20px;
+}
+
 .film-commentary{
     max-width: 900px;
     margin: 20px auto;
@@ -1417,6 +1424,20 @@ nav ul li a:hover::after{
     margin-bottom: 0.75rem;
 }
 
+.equal-height-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.equal-height-gallery .project-images-layout {
+    aspect-ratio: 16 / 9;
+}
+
+.equal-height-gallery .project-images-layout img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .image-text-row { 
   display: flex; 
   gap: 1rem; 
@@ -1431,13 +1452,21 @@ nav ul li a:hover::after{
 } 
 
 .text-section {
-    padding-top: 1rem;
+    padding-top: 0.35rem;
 }
 
 .image-text-row .image-section img { 
   width: 100%; 
   height: auto; 
   display: block; 
+}
+
+.image-text-row-image-35 .image-section {
+        flex: 0 0 35%;
+}
+
+.image-text-row-image-35 .text-section {
+        flex: 1 1 65%;
 }
 
 @media (max-width: 768px) {
@@ -1470,7 +1499,7 @@ nav ul li a:hover::after{
 .project-section-text h2 {
     font-size: 32px;
     color: #3d82c2;
-    margin: 1rem;
+    margin: 0rem 0rem 1rem 0rem;
 }
 
 .project-section-text h3 {

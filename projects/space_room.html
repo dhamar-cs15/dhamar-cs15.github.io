@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles.css">
+        <base href="../">
+        <title>Space Room</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Bellota Text' rel='stylesheet'>
+    </head>
+
+    <body>
+        <!-- <div class="container"> -->
+        <div class="background-gradient space-room-gradient">
+            <nav class="space-room-nav">
+                <a href="index.html" aria-label="Home"><img src="images/white_logo.png" class="logo" alt="logo"></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="art.html">Art</a></li>
+                </ul>
+            </nav>
+        <!-- </div> -->
+
+
+        <div class="page-header">
+            <h1>Space Room</h1>
+        </div>
+        <main id="portfolio">
+            <div class="container">
+                <section class="animation-video-embed collection-video-embed">
+                    <div class="video-embed">
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/Dpd8EWA72Xs?si=M2B_1a-3on5DgvnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <div class="spacer"></div>
+
+                <section class="project-section-container">
+                    <div class="project-section-text">
+                        <h1>What if you could travel through space from your room?</h1>
+                    </div>
+                    <div class="spacer"></div>
+
+                    <div class="image-text-row">
+                        <!-- <div class="project-skills"> -->
+                        <div class="text-section">
+                            <ul class="project-skills-list">
+                                <li>
+                                    <strong>Unity</strong>
+                                </li>
+                                <li>
+                                    <strong>3D Modeling</strong>
+                                </li>
+                                <li>
+                                    <strong>Interactive Design</strong>
+                                </li>
+                        </div>
+                        <!-- <div class="description">
+                            <p>Inspired by my college dorm, this room model explores a collection of memories through souvenirs and personal items.</p>
+                            <br>
+                            <p>The goal was to create an experience that felt interactive and welcoming, a snapshot into my personal life. A large part of this project was the process of translating the model from a static Blender model to an interactive web experience.</p>
+                        </div> -->
+                        <div class="image-section">
+                            <img src="images/space_room/space_room_moon_orbit.gif" alt="camera controls turnaround gif">
+                        </div>
+                    </div>
+                </section>
+
+                    <!-- <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/dorm_room3d/dorm_room_blender_viewport.png" alt="2D sketch">
+                                <figcaption>2D sketch plan (Procreate)</figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-images-layout">
+                            <figure>
+                                <img src="images/dorm_room3d/dorm_room_blender_viewport.png" alt="blender unrendered model">
+                                <figcaption>3D Modeling Process (Blender)</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>3D Look Development</h2>
+                        <p>Most of the time I spent in my room was in the evenings, where I had my lamp on and the room took on a warm lighting of coziness.</p>
+                        <p>The items I chose to recreate in this 3D model were made of a variety of different materials, including glass, metal, paper, and wood. It was important to replicate the behaviors of each material using different textures and thinking about how each should react to the room's lighting.</p>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <img src="images/dorm_room3d/dorm_room_deskcorner.png" alt="render of desk corner and lamp">
+                        </div>
+                        <div class="project-images-layout">
+                            <img src="images/dorm_room3d/dorm_room_shelfSouvenir.png" alt="render of souvenir shelf">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>From Blender to Three.js</h2>
+                        <div class="image-text-row image-text-row-image-35">
+                        <div class="text-section project-section-text">
+                            <p>In order to make this model interactive as a web experience, it had to be translated from its native state in Blender to objects that could be accessed through a live page. The process in Blender involved UV unwrapping the models and baking their textures in order to preserve their geometries, colors, and materials' lighting behaviors.</p>
+                        </div>
+                        <div class="image-section">
+                            <img src="images/dorm_room3d/dorm_room_deskMugBake.jpg" alt="memorial hall analysis">
+                        </div>
+                    </div>
+                    <div class="project-images-grid generative-andrade-gallery">
+                        <div class="project-images-layout">
+                            <img src="images/dorm_room3d/dorm_room_uv_texture_teacup.png" alt="render of desk corner and lamp">
+                        </div>
+                    </div>
+
+                    <div class="image-text-row">
+                        <div class="text-section project-section-text">
+                            <p>Afterwards, I began organizing the objects on a webpage using the 3D graphics Javascript library three.js, allowing them to exist in a 3D world outside of Blender.</p>
+                            <p>One of the main challenges of this was programming the camera and mouse controls so that users were able to navigate through the room using their trackpad while staying within designated bounds.</p>
+                        </div>
+                        <div class="image-section">
+                            <img src="images/dorm_room3d/dorm_room_camera_controls.gif" alt="camera controls turnaround gif">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="project-section-container">
+                    <div class="project-section-text">
+                        <h2>Interaction Delivery</h2>
+                        <p>The final step was adding biographies to the main objects in the room. This model allows you to hover over an object and click to read a bit about what makes this object special to me. Some of them have even inspired art that is linked in their bios.</p>
+                        <br>
+                        <p>View the video walk-through or test out the room model for yourself below!</p>
+                    </div>
+                </div> 
+                <br>
+                <div class="project-section-text">
+                    <p>Live Room Model:</p>
+                </div>
+                <div class="iframe-container">
+                    <iframe src="https://dhamar-cs15.github.io/dorm-room3d" width="100%" height="500px" title="Embedded Page"></iframe>
+                </div>
+                <a class="iframe-launch-button" href="https://dhamar-cs15.github.io/dorm-room3d" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    Open in new tab
+                </a>
+
+                <div class="project-section-container">
+                    <div class="image-text-row">
+                        <div class="text-section project-section-text">
+                            <h2>Final Thoughts</h2>
+                            <p>The result of this project was an interactive room that was able to exist outside of Blender and allowed users to explore it in a 3D environment powered by three.js. This virtual model successfully models my college dorm in a way that feels complete, warm, and like a representation of my time at Harvard.</p>
+                            <p>I had previously used Blender and three.js each for 3D modeling, but never connected both. I enjoyed learning how to translate the project across the two tools and use them to create something that wouldn't have been possible in one alone.</p>
+                        </div>
+                        <div class="image-section">
+                            <img src="images/dorm_room3d/dormroom_sideview.png" alt="memorial hall analysis">
+                        </div>
+                    </div>
+                </div> -->
+                
+                <div class="project-images-grid two-by-two-grid">
+                    <div class="project-images-layout">
+                        <img src="images/space_room/AsteroidFieldView.png" alt="desk journal close up">
+                    </div>
+                    <div class="project-images-layout">
+                        <img src="images/space_room/JupiterSpotsView.png" alt="dorm room bed view">
+                    </div>
+                    <div class="project-images-layout">
+                        <img src="images/space_room/OutsideAstrophageView.png" alt="desk journal close up">
+                    </div>
+                    <div class="project-images-layout">
+                        <img src="images/space_room/EarthNebulaView.png" alt="dorm room bed view">
+                    </div>
+                </div>
+            </div>  
+            </main>
+
+            <div class="end-image coming-soon">
+                <h2>Full Project Coming Soon</h2>
+                <img src="images/space_room/StarDustFootnote.png" alt="dorm room end card">
+            </div>
+        </div>
+
+        <div class="art-lightbox" id="simpleLightbox">
+            <div class="art-lightbox-content">
+                <button class="lightbox-close" id="simpleLightboxClose" aria-label="Close">&times;</button>
+                <figure class="lightbox-figure">
+                    <img class="lightbox-image" id="simpleLightboxImage" src="" alt="">
+                </figure>
+            </div>
+        </div>
+    </body>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('simpleLightbox');
+        const lightboxImage = document.getElementById('simpleLightboxImage');
+        const closeBtn = document.getElementById('simpleLightboxClose');
+
+        document.querySelectorAll('.project-images-layout img').forEach((img) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt || '';
+            lightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightboxImage.src = '';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+        });
+    </script>
+    <script src="scroll-effects.js"></script>
+</html>

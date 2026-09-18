@@ -408,6 +408,11 @@ tr:nth-child(even) {
     background-image: linear-gradient(to bottom, #d5e6f9 0px, #f2f2f2 400px);
 }
 
+.space-room-gradient {
+    background-image: linear-gradient(to bottom, rgb(1, 0, 51), rgb(4, 0, 28));
+}
+
+
 nav{
     padding: 10px 10%;
     display: flex;
@@ -419,6 +424,14 @@ nav{
     background: rgba(231, 238, 245, 0.851);
     backdrop-filter: blur(10px);
     z-index: 1000;
+}
+
+.space-room-nav {
+    background: rgba(0, 40, 79, 0.447);
+}
+
+.space-room-nav a{
+    color: rgba(255, 255, 255, 0.504);
 }
 
 .unstick-nav nav{
@@ -1371,6 +1384,21 @@ nav ul li a:hover::after{
     margin: 3rem 0;
 }
 
+.project-images-grid.two-by-two-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, auto);
+}
+
+.two-by-two-grid .project-images-layout {
+    aspect-ratio: auto;
+}
+
+@media (max-width: 600px) {
+    .project-images-grid.two-by-two-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .project-images-layout {
     padding: 0;
     aspect-ratio: 4 / 3;
@@ -1496,6 +1524,13 @@ nav ul li a:hover::after{
     line-height: 1.25;
 }
 
+.project-section-text h1 {
+    font-size: 6rem;
+    color: #3d82c2;
+    margin: 0rem 0rem 1rem 0rem;
+    text-align: center;
+}
+
 .project-section-text h2 {
     font-size: 32px;
     color: #3d82c2;
@@ -1526,6 +1561,28 @@ nav ul li a:hover::after{
     width: 100%;
     height: auto;
     display: block;
+}
+
+.end-image h2{
+    font-family: 'Candara', sans-serif;
+    font-size: 6rem;
+    color: #3d82c2;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.end-image.coming-soon {
+    position: relative;
+}
+
+.end-image.coming-soon h2 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .creative-media-container {

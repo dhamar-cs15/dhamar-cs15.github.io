@@ -19,7 +19,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="index.html#portfolio">Projects</a></li>
                         <li><a href="art.html">Art</a></li>
                     </ul>
                 </nav>
@@ -34,49 +34,6 @@
                 </div>
             </div>
         </div>
-        <!-- about section  -->
-        <div id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="about-col-1">
-                        <img src="images/mini-about.JPG" alt="mini-about">
-                    </div>
-                    <div class="about-col-2">
-                        <h1 class="sub-title about">About Me</h1>
-                        <p class="italicize">How does the world work? Why do we need this? Why hasn't anyone came up with a solution for this? </p>
-                            <p>These are the questions that I ask myself every day. I'm a curious person with an attention to detail and never a silent moment in my brain.
-                            This is what makes me so passionate about design and technology I love to learn about the world around me and how we interact with everything in it. 
-                            </p>
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onmouseenter="opentab(event, 'skills')">Skills</p>
-                            <p class="tab-links" onmouseenter="opentab(event, 'experience')">Experience</p>
-                            <p class="tab-links" onmouseenter="opentab(event, 'education')">Education</p>
-                        </div>
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>UI/UX</span><br>Figma, Webflow, Sketch, HTML, CSS, wireframing, storytelling</li>
-                                <li><span>Programming</span><br>C, C++, Python, JavaScript, SQL, R, OCaml</li>
-                                <li><span>Art & Animation</span><br>Photoshop, Illustrator, AfterEffects, InDesign, Premiere Pro, Maya, Unity</li>
-                                <li><span>Personal</span><br>Native: Spanish & English, Intermediate French, oil painting, mentoring</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>June 2025 - Present</span><br>Social Media Marketer @ Kinlia</li>
-                                <li><span>January 2025 - Present</span><br>Associate Product Manager @ Harvard Product Lab</li>
-                                <li><span>September 2023 - Present</span><br>Director of Marketing and Strategy @ WECode</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="education">
-                            <ul>
-                                <li><span>A.B in Computer Science and Government</span><br>Harvard University (Aug 2022 - May 2026)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <hr class="divider">
 
         <!-- portfolio -->
@@ -84,101 +41,173 @@
             <!-- tech projects  -->
             <div class="container">
                 <h1 class="sub-title">Featured Projects</h1>
-                <div class="work-list">
-                    <div class="work">
-                        <img src="images/whoop_cover.png" alt="whoop-cover">
-                        <div class="layer projects-layer">
-                            <h3><strong>WHOOP</strong></h3>
-                            <p>Product Management project on implementing Community features for the WHOOP fitness app.</p>
-                            <a href="projects/whoop.html"></a>
+                <div class="project-filters" role="group" aria-label="Filter featured projects">
+                    <button type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" data-filter="animation" aria-pressed="false">Animation</button>
+                    <button type="button" data-filter="interactive" aria-pressed="false">Interactive &amp; 3D</button>
+                    <button type="button" data-filter="product" aria-pressed="false">Product &amp; UX</button>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card project-card--featured" data-category="product" data-span="5">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/wecode.html">
+                                <div class="project-card-media">
+                                    <img src="images/wecode/wecode_cover.jpg" alt="WECode conference branding" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>Designing the visual identity and marketing strategy for the largest student-led conference for women in tech.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">The WECode Conference</h2>
+                                    <p class="project-card-tools">Brand Identity // Marketing</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/movies_cover.png" alt="movies and the economy thumbnail">
-                        <div class="layer projects-layer">
-                            <h3><strong>Past, Present, Projection</strong></h3>
-                            <p>Website analyzing how movies reflect the world's economic state through data visualizations.</p>
-                            <a href="projects/movies_viz.html"></a>
+                    </article>
+                    <article class="project-card" data-category="interactive" data-span="7">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/collection_of_memories.html">
+                                <div class="project-card-media">
+                                    <img src="images/dorm_room3d/dorm_model_render.png" alt="3D render of a modeled college dorm room" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>An interactive 3D model of my college dorm and the memories it held.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Collection of Memories</h2>
+                                    <p class="project-card-tools">Blender // Three.js // Interactive</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/w2w_cover.png" alt="weather2wear-title">
-                        <div class="layer projects-layer">
-                            <h3><strong>Weather 2 Wear</strong></h3>
-                            <p>UX Case Study for a weather-based clothing recommendation app.</p>
-                            <a href="projects/w2w.html"></a>
+                    </article>
+                    <article class="project-card project-card--second-row" data-category="interactive" data-span="8">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/space_room.html">
+                                <div class="project-card-media">
+                                    <img src="images/space_room/EarthNebulaView.png" alt="Unity scene of Earth and a nebula" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>A customizable 3D environment of different celestial sights and phenomena.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Space Room <span class="project-card-badge">Coming Soon</span></h2>
+                                    <p class="project-card-tools">Unity // C# // Interactive 3D</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                     <div class="work">
-                        <img src="images/wecode/wecode_cover.jpg" alt="wecode-header-image">
-                        <div class="layer projects-layer">
-                            <h3><strong>The WECode Conference</strong></h3>
-                            <p>Designing the visual identity and marketing strategy for the largest student-led conference for women in tech.</p>
-                            <a href="projects/wecode.html"></a>
+                    </article>
+                    <article class="project-card project-card--second-row" data-category="animation" data-span="4">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/ribboned.html">
+                                <div class="project-card-media">
+                                    <img src="images/ribboned_cover.png" alt="Ribboned, a hand-drawn folklorico dancer and quetzal bird" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>Hand-drawn animation about a folklorico dancer and a quetzal bird entangled in a shared struggle for freedom.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Ribboned</h2>
+                                    <p class="project-card-tools">2D Animation // TVPaint // Premiere Pro</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/andrade/low_abstraction3.png" alt="generative_andrade-title">
-                        <div class="layer projects-layer">
-                            <h3><strong>Generating Architecture as Space Rooms</strong></h3>
-                            <p>A p5.js program using Harvard’s architecture as inspiration to generate new rule-based designs.</p>
-                            <a href="projects/generative_andrade.html"></a>
+                    </article>
+                    <article class="project-card project-card--third-row" data-category="interactive" data-span="6">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/generative_andrade.html">
+                                <div class="project-card-media">
+                                    <img src="images/andrade/low_abstraction3.png" alt="Generated geometric design inspired by Harvard architecture" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>A p5.js program using Harvard's architecture as inspiration to generate new rule-based designs.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Generating Architecture as Space Rooms</h2>
+                                    <p class="project-card-tools">p5.js // Creative Coding</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/dorm_room3d/dorm_model_render.png" alt="dorm-room3d title">
-                        <div class="layer projects-layer">
-                            <h3><strong>Collection of Memories</strong></h3>
-                            <p>Blender, three.js, interactive design</p>
-                            <p>An interactive 3D model of my college dorm and the memories it held.</p>
-                            <a href="projects/collection_of_memories.html"></a>
+                    </article>
+                    <article class="project-card project-card--third-row" data-category="interactive" data-span="6">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/movies_viz.html">
+                                <div class="project-card-media">
+                                    <img src="images/movies_cover.png" alt="Movies and the economy visualization project" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>Website analyzing how movies reflect the world's economic state through data visualizations.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Past, Present, Projection</h2>
+                                    <p class="project-card-tools">Data Visualization // React // D3.js</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/ribboned_cover.png" alt="Ribboned Cover Image">
-                        <div class="layer projects-layer">
-                            <h3><strong>Ribboned</strong></h3>
-                            <p>Hand-drawn 2D animation.</p> 
-                            <p>A folklorico dancer and a quetzal bird entangled in a shared struggle for freedom.</p>
-                            <a href="projects/ribboned.html"></a>
+                    </article>
+                    <article class="project-card" data-category="product" data-span="4">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/whoop.html">
+                                <div class="project-card-media">
+                                    <img src="images/whoop_cover.png" alt="WHOOP community feature concept" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>Product Management project on implementing Community features for the WHOOP fitness app.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">WHOOP</h2>
+                                    <p class="project-card-tools">Product Management // User Research</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/sunset_studiopole.JPG" alt="Sunset Thumbnail">
-                        <div class="layer projects-layer">
-                            <h3><strong>Sunset</strong></h3>
-                            <p>Stop-motion animation.</p>
-                            <p>A trophy statuette comes to life and learns that the world is not as perfect as she believed it to be.</p>
-                            <a href="projects/sunset.html"></a>
+                    </article>
+                    <article class="project-card" data-category="product" data-span="4">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/w2w.html">
+                                <div class="project-card-media">
+                                    <img src="images/w2w_cover.png" alt="Weather 2 Wear project cover" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>UX case study for a weather-based clothing recommendation app.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Weather 2 Wear</h2>
+                                    <p class="project-card-tools">Figma // UX Research</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/short_animations_cover.png" alt="short_animations_cover">
-                        <div class="layer projects-layer">
-                            <h3><strong>Short Animation Clips</strong></h3>
-                            <p>A collection of short animation clips in a variety of mediums.</p>
-                            <a href="projects/short_animations.html"></a>
+                    </article>
+                    <article class="project-card" data-category="animation" data-span="4">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/sunset.html">
+                                <div class="project-card-media">
+                                    <img src="images/sunset_studiopole.JPG" alt="Sunset stop-motion animation studio set" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>A trophy statuette comes to life and learns that the world is not as perfect as she believed it to be.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Sunset</h2>
+                                    <p class="project-card-tools">Stop-Motion // Animation</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/space_room/EarthNebulaView.png" alt="dorm-room3d title">
-                        <div class="layer projects-layer">
-                            <h3><strong>Space Room</strong> (Coming Soon)</h3>
-                            <p>Unity, C#, interactive design.</p>
-                            <p>A customizable 3D environment of different celestial sights and phenomenons</p>
-                            <a href="projects/space_room.html"></a>
+                    </article>
+                    <article class="project-card" data-category="animation" data-span="12">
+                        <div class="project-card-content">
+                            <a class="project-card-link" href="projects/short_animations.html">
+                                <div class="project-card-media">
+                                    <img src="images/short_animations_cover.png" alt="Still from the short animation clips collection" loading="lazy">
+                                    <div class="project-card-overlay">
+                                        <p>A collection of short animation clips in a variety of mediums.</p>
+                                    </div>
+                                </div>
+                                <div class="project-card-meta">
+                                    <h2 class="project-card-title">Short Animation Clips</h2>
+                                    <p class="project-card-tools">2D // 3D // Mixed Media</p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    
-                    <!-- <div class="work">
-                        <img src="images/w2w/w2w_title.png" alt="Three.js Demo Thumbnail">
-                        <div class="layer projects-layer">
-                            <h3><strong>Three.js Demo</strong></h3>
-                            <p>Interactive 3D scene built with Three.js.</p>
-                            <p>Explore a WebGL-powered canvas with animated assets and textures.</p>
-                            <a href="dist/index.html"></a>
-                        </div>
-                    </div> -->
+                    </article>
                 </div>
                 <!-- <a href="#" class="btn btn-blue">View All Projects</a> -->
             </div>

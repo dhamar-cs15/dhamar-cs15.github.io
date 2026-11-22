@@ -89,28 +89,66 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, 1000);
 });
 
-// About Me Tablinks
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-
-function opentab(event, tabname) {
-    for(tablink of tablinks){
-        tablink.classList.remove("active-link");
-    }
-    for(tabcontent of tabcontents){
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
-
-
 const btn = document.getElementById('toggleBtn');
 const wrapper = document.getElementById('imageWrapper');
 
-btn.addEventListener('click', () => {
-  wrapper.classList.toggle('expanded');
-  btn.textContent = wrapper.classList.contains('expanded')
-    ? 'Show less'
-    : 'Show more';
-});
+if (btn && wrapper) {
+  btn.addEventListener('click', () => {
+    wrapper.classList.toggle('expanded');
+    btn.textContent = wrapper.classList.contains('expanded')
+      ? 'Show less'
+      : 'Show more';
+  });
+}
+
+const projectGrid = document.querySelector('.project-grid');
+
+if (projectGrid) {
+    const projectCards = Array.from(projectGrid.querySelectorAll('.project-card'));
+    const filterButtons = Array.from(document.querySelectorAll('.project-filters button'));
+    const defaultSpans = projectCards.map(card => card.dataset.span);
+    let activeFilter = 'all';
+
+    function updateProjectSpans() {
+        const cardsPerRow = window.innerWidth > 1100 ? 3 : window.innerWidth > 600 ? 2 : 1;
+        projectGrid.classList.toggle('project-grid--all', activeFilter === 'all');
+
+        if (activeFilter === 'all' && cardsPerRow === 3) {
+            projectCards.forEach((card, index) => {
+                card.dataset.span = defaultSpans[index];
+            });
+            return;
+        }
+
+        const visibleCards = projectCards.filter(card => !card.hidden);
+        for (let index = 0; index < visibleCards.length;) {
+            const rowSize = Math.min(cardsPerRow, visibleCards.length - index);
+            const span = String(12 / rowSize);
+
+            visibleCards.slice(index, index + rowSize).forEach(card => {
+                card.dataset.span = span;
+            });
+
+            index += rowSize;
+        }
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            activeFilter = button.dataset.filter;
+
+            filterButtons.forEach(filterButton => {
+                filterButton.setAttribute('aria-pressed', String(filterButton === button));
+            });
+
+            projectCards.forEach(card => {
+                card.hidden = activeFilter !== 'all' && !card.dataset.category.split(' ').includes(activeFilter);
+            });
+
+            updateProjectSpans();
+        });
+    });
+
+    window.addEventListener('resize', updateProjectSpans, { passive: true });
+    updateProjectSpans();
+}

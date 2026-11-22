@@ -1,10 +1,12 @@
 function setup() {
-  createCanvas(windowHeight, windowHeight);
+  const canvasSize = Math.min(windowWidth, windowHeight);
+  createCanvas(canvasSize, canvasSize);
   noLoop();
 }
 
 function windowResized() {
-  resizeCanvas(windowHeight, windowHeight);
+  const canvasSize = Math.min(windowWidth, windowHeight);
+  resizeCanvas(canvasSize, canvasSize);
   redraw();
 }
 

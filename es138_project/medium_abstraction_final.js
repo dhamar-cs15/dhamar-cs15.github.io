@@ -65,7 +65,8 @@ let bottomColors = [
 ];
 
 function setup() {
-  createCanvas(windowHeight, windowHeight);
+  const canvasSize = Math.min(windowWidth, windowHeight);
+  createCanvas(canvasSize, canvasSize);
   
   cellW = width / cols;
   cellH = height / rows;
@@ -74,7 +75,8 @@ function setup() {
 }
 
 function windowResized() {
-  resizeCanvas(windowHeight, windowHeight);
+  const canvasSize = Math.min(windowWidth, windowHeight);
+  resizeCanvas(canvasSize, canvasSize);
   cellW = width / cols;
   cellH = height / rows;
   redraw();

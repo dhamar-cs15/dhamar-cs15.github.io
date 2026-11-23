@@ -140,6 +140,12 @@ a {
   padding: clamp(48px, 8vw, 96px) 0;
 }
 
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 58%;
+}
+
 .hero::before {
   position: absolute;
   z-index: -1;
@@ -153,35 +159,57 @@ a {
   pointer-events: none;
 }
 
-.blob {
+.hero-art {
   position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  animation: drift 11s ease-in-out infinite alternate;
+  z-index: 0;
+  top: 0;
+  right: -2%;
+  bottom: 0;
+  width: min(52%, 620px);
   pointer-events: none;
 }
 
-.b1 {
-  top: 8%;
-  right: 2%;
-  width: clamp(160px, 26vw, 340px);
-  aspect-ratio: 1;
-  background: var(--light-blue);
+.hero-art img {
+  position: absolute;
+  display: block;
+  object-fit: contain;
 }
 
-.b2 {
-  top: 46%;
-  right: 22%;
-  width: clamp(90px, 14vw, 190px);
-  aspect-ratio: 1;
-  background: var(--pink);
-  animation-duration: 8s;
-  animation-direction: alternate-reverse;
+.hero-astro {
+  z-index: 10;
+  top: 0;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-5%) scale(0.95);
+  transform-origin: center;
+  animation: astro-float 5s ease-in-out infinite alternate;
 }
 
-@keyframes drift {
+.hero-books {
+  right: 0;
+  bottom: 0%;
+  transform: translateY(13%) scale(1.2);
+  width: 95%;
+  height: 95%;
+  animation: books-float 5s ease-in-out -1.5s infinite alternate;
+}
+
+@keyframes astro-float {
+  from {
+    translate: 0 0;
+  }
   to {
-    transform: translate(-26px, 22px) scale(1.08);
+    translate: 0 -15px;
+  }
+}
+
+@keyframes books-float {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -10px;
   }
 }
 
@@ -234,18 +262,6 @@ a {
   }
 }
 
-.tag {
-  display: inline-block;
-  align-self: flex-start;
-  margin: 26px 0 0;
-  border-radius: 3px;
-  background: var(--pink);
-  color: var(--navy);
-  padding: 6px 14px;
-  font-size: 16px;
-  transform: rotate(-2deg);
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -281,14 +297,6 @@ a {
   background: var(--yellow);
 }
 
-/* Role highlights */
-.fit {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-  gap: 18px;
-  padding: 8px 0 56px;
-}
-
 .section-title {
   display: flex;
   align-items: center;
@@ -308,46 +316,6 @@ a {
   flex: 0 0 auto;
   background: url("images/star_icon.png") center / contain no-repeat;
   content: "";
-}
-
-.fit > .section-title {
-  grid-column: 1 / -1;
-}
-
-.fit article {
-  position: relative;
-  min-width: 0;
-  border: 1px solid rgba(61, 130, 194, 0.18);
-  border-radius: 12px;
-  background: #fff;
-  padding: 22px 20px 20px;
-  box-shadow: 0 8px 24px rgba(0, 9, 28, 0.06);
-}
-
-.fit article::before {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 24px;
-  height: 24px;
-  background: url("images/star_icon.png") center / contain no-repeat;
-  content: "";
-}
-
-.fit h3 {
-  margin: 0 0 8px;
-  padding-left: 34px;
-  color: var(--blue);
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 1.35;
-}
-
-.fit p {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.6;
 }
 
 /* Selected work */
@@ -392,6 +360,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   opacity: 0;
   transform: scale(1);
   transition: opacity 600ms ease, transform 3s ease;
@@ -642,6 +611,7 @@ dialog::backdrop {
   width: min(1120px, calc(100% - 32px));
   height: min(86vh, 700px);
   grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
   border-radius: 16px;
   background: var(--paper);
@@ -651,6 +621,7 @@ dialog::backdrop {
   position: relative;
   display: flex;
   min-width: 0;
+  min-height: 0;
   flex-direction: column;
   background: var(--deep-blue);
 }
@@ -665,10 +636,12 @@ dialog::backdrop {
 }
 
 .mstage img {
-  max-width: 100%;
-  max-height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
   object-fit: contain;
+  object-position: center;
 }
 
 .mview .arr {
@@ -690,6 +663,7 @@ dialog::backdrop {
 
 .thumbs {
   display: flex;
+  flex: 0 0 auto;
   gap: 8px;
   overflow-x: auto;
   padding: 6px 14px 14px;
@@ -919,23 +893,19 @@ dialog::backdrop {
     min-height: 520px;
   }
 
-  .hero::before {
-    top: 20%;
-    right: -18%;
-    width: 95%;
-    opacity: 0.2;
+  .hero-copy {
+    max-width: 100%;
   }
 
-  .blob {
-    opacity: 0.55;
-  }
-
-  .b1 {
-    right: -14%;
-  }
-
-  .b2 {
-    right: 28%;
+  .hero-art {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: min(92%, 360px);
+    height: clamp(220px, 65vw, 270px);
+    margin: 0 auto 48px;
+    opacity: 1;
   }
 
   .section-title {
@@ -994,36 +964,23 @@ dialog::backdrop {
 <div class="page-surface">
 <main class="wrap">
     <section class="hero" aria-labelledby="hero-title">
-        <div class="blob b1" aria-hidden="true"></div>
-        <div class="blob b2" aria-hidden="true"></div>
-        <p class="hi">Hi Tor, I'm</p>
-        <h1 id="hero-title">Dhamar</h1>
-        <h2 class="typed" aria-live="off">
-            <span id="tt">a designer working across print, motion, and digital.</span>
-            <span class="cur" aria-hidden="true">|</span>
-        </h2>
-        <p class="tag">Junior Designer applicant · Tor AdPromo</p>
-        <div class="row">
-            <a class="btn" href="Dhamar_Carrillo_Tor_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
-            <a class="btn o" href="mailto:dbccarrillo13@gmail.com">Email me</a>
-            <a class="btn o" href="https://www.linkedin.com/in/dhamar-carrillo/" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="hero-art" aria-hidden="true">
+            <img class="hero-books" src="images/tor_books.png" alt="">
+            <img class="hero-astro" src="images/tor_astro.png" alt="">
         </div>
-    </section>
-
-    <section class="fit" aria-labelledby="fit-title">
-        <h2 class="section-title" id="fit-title">What I bring</h2>
-        <article>
-            <h3>Merch, print, and social</h3>
-            <p>I've designed 15+ merch and print items and the media kits sponsors saw first, each proofed with vendors and delivered on deadline.</p>
-        </article>
-        <article>
-            <h3>Motion and animation</h3>
-            <p>After Effects and Premiere for campaigns, plus a hand-drawn short film built frame by frame.</p>
-        </article>
-        <article>
-            <h3>Code and landing pages</h3>
-            <p>HTML, CSS, JavaScript, and React, so building and updating a page is part of how I design.</p>
-        </article>
+        <div class="hero-copy">
+            <p class="hi">Hi Tor, I'm</p>
+            <h1 id="hero-title">Dhamar</h1>
+            <h2 class="typed" aria-live="off">
+                <span id="tt">a designer working across print, motion, and digital.</span>
+                <span class="cur" aria-hidden="true">|</span>
+            </h2>
+            <div class="row">
+                <a class="btn" href="Dhamar_Carrillo_Tor_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+                <a class="btn o" href="mailto:dbccarrillo13@gmail.com">Email me</a>
+                <a class="btn o" href="https://www.linkedin.com/in/dhamar-carrillo/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
     </section>
 
     <section class="work-section" id="work" aria-labelledby="work-title">
@@ -1100,26 +1057,27 @@ const projects = [
   {
     category: "Merch",
     color: "p",
-    title: "Mascot, totes, and stickers",
+    title: "T-Shirts, Tote Bags, Tumblers for 1200+ attendees",
     description: "WECode merchandise, from mascot to delivery.",
     role: "Director of Marketing and Strategy, WECode",
     details: [
-      "Designed 15+ merch and print items: tees, tote bags, water bottles, six sticker designs, two journal editions, an illustrated speaker thank-you card, caps, and lanyards.",
+      "Designed 15+ merch and print items: tees, tote bags, water bottles, six sticker designs, two journal editions, an illustrated speaker thank-you card, caps, lanyards, tumblers, jackets, and more.",
       "Created the organization’s logo and its first permanent mascot, an axolotl, replacing yearly mascot redesigns.",
       "Took designs through multiple rounds of vendor proofs and coordinated on-time delivery across 11 categories."
     ],
     caseStudy: "projects/wecode.html",
     images: [
       "images/art/wecode_tshirt.png",
+      "images/wecode/introducing-lottie.gif",
       "images/art/wecode_hoodie.JPG",
-      "images/art/axolotl_design1.JPG",
-      "images/art/wecode_thankyou.jpg"
+      "images/wecode/totebags_proof.png",
+      "images/wecode/wecode_merch_journal.jpg"
     ]
   },
   {
     category: "Print and ads",
     color: "b",
-    title: "Media kit and prospectus",
+    title: "Media kits and social media graphics",
     description: "Pages built to introduce WECode to sponsors.",
     role: "Director of Marketing and Strategy, WECode",
     details: [
@@ -1129,26 +1087,11 @@ const projects = [
     ],
     caseStudy: "projects/wecode.html",
     images: [
+      "images/wecode/welcome_wecode.gif",
       "images/wecode/wecode_media_kit_pg1.jpg",
       "images/wecode/wecode_media_kit_pg2.jpg",
       "images/wecode/wecode_media_kit_pg6.jpg",
-      "images/wecode/wecode_media_kit_pg7.jpg"
-    ]
-  },
-  {
-    category: "Social",
-    color: "p",
-    title: "Campaign and scholarship graphics",
-    description: "Graphics planned on a content calendar.",
-    role: "Director of Marketing and Strategy, WECode",
-    details: [
-      "Designed and scheduled social graphics against a content calendar I planned myself.",
-      "Developed WECode’s first annual conference theme, “Beyond the Frame,” and carried its frame motifs through graphics all year.",
-      "Kept the brand consistent across the website and every social platform."
-    ],
-    caseStudy: "projects/wecode.html",
-    images: [
-      "images/wecode/wecode_header.jpg",
+      "images/wecode/wecode_media_kit_pg7.jpg",
       "images/wecode/AD_applications.png",
       "images/wecode/wecode26_scholarships.png"
     ]
@@ -1210,6 +1153,23 @@ const projects = [
       "images/movies/economic_map.png",
       "images/movies/line_graph.png",
       "images/movies/superhero_trend.png"
+    ]
+  },
+  {
+    category: "Motion",
+    color: "b",
+    title: "Short Animated Clips",
+    description: "Short motion graphics made for social media or personal projects",
+    role: "Illustrator, Animator",
+    details: [
+      "Designed and scheduled social graphics against a content calendar I planned myself.",
+      "Developed WECode’s first annual conference theme, “Beyond the Frame,” and carried its frame motifs through graphics all year.",
+      "Kept the brand consistent across the website and every social platform."
+    ],
+    caseStudy: "projects/wecode.html",
+    images: [
+      "images/art/kokuho_animation_LS.gif",
+      "images/art/TBOL_la_muerte_web.gif"
     ]
   }
 ];

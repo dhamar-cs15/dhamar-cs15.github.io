@@ -17,7 +17,8 @@
   --yellow: #ffd87d;
   --deep-blue: #00091c;
   --content-width: 1200px;
-  --footer-height: 220px;
+  --footer-height: 55vh;
+  --portfolio-footer-height: 50px;
 }
 
 * {
@@ -61,7 +62,15 @@ a {
 }
 
 .footer-reveal-space {
-  height: var(--footer-height);
+  height: calc(var(--footer-height) + var(--portfolio-footer-height));
+}
+
+.footer-stack {
+  position: fixed;
+  z-index: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 /* Navigation */
@@ -635,7 +644,8 @@ dialog::backdrop {
   padding: 14px;
 }
 
-.mstage img {
+.mstage img,
+.mstage video {
   display: block;
   width: 100%;
   height: 100%;
@@ -670,6 +680,7 @@ dialog::backdrop {
 }
 
 .th {
+  position: relative;
   width: 64px;
   height: 48px;
   flex: none;
@@ -687,6 +698,15 @@ dialog::backdrop {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.th-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
 }
 
 .th[aria-current] {
@@ -792,7 +812,7 @@ dialog::backdrop {
 
 /* Closing and responsive layout */
 .end {
-  padding: 72px 0 28px;
+  padding: 72px 0 64px;
   text-align: center;
 }
 
@@ -814,17 +834,13 @@ dialog::backdrop {
 }
 
 .quote-footer {
-  position: fixed;
-  z-index: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  position: relative;
   display: grid;
   min-height: var(--footer-height);
   place-items: center;
   background: var(--deep-blue);
   color: #fff;
-  padding: 24px;
+  padding: 40px;
   text-align: center;
 }
 
@@ -833,28 +849,68 @@ dialog::backdrop {
   margin: 0;
 }
 
-.quote-footer blockquote::before {
-  display: block;
-  color: var(--light-blue);
-  content: "“";
-  font-size: 3rem;
-  line-height: 0.8;
+.floating-bamboo {
+  position: absolute;
+  right: 7%;
+  bottom: -5%;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  pointer-events: none;
+  animation: bamboo-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes bamboo-float {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -18px;
+  }
 }
 
 .quote-placeholder {
   margin: 0 0 10px;
-  font-size: clamp(1rem, 2.4vw, 1.4rem);
-  font-style: italic;
-  font-weight: 300;
+  font-size: clamp(1.5rem, 2.4vw, 1.75rem);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .quote-footer cite {
-  color: var(--yellow);
-  font-size: 0.95rem;
+  color: var(--blue);
+  font-size: 0.8rem;
   font-style: normal;
 }
 
+.portfolio-footer {
+  display: flex;
+  min-height: var(--portfolio-footer-height);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("images/star_header.jpg") center / cover no-repeat;
+  text-align: center;
+}
+
+.portfolio-footer p {
+  margin: 0;
+  color: #5f9ed9;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.portfolio-footer .copyright {
+  color: #fff;
+}
+
 @media (max-width: 760px) {
+  .floating-bamboo {
+    right: -4%;
+    bottom: -12%;
+    height: 75%;
+    opacity: 0.55;
+  }
+
   .mwrap {
     width: calc(100% - 20px);
     height: calc(100% - 24px);
@@ -869,10 +925,6 @@ dialog::backdrop {
 }
 
 @media (max-width: 600px) {
-  :root {
-    --footer-height: 190px;
-  }
-
   .top {
     justify-content: center;
   }
@@ -954,7 +1006,7 @@ dialog::backdrop {
     <nav aria-label="Page">
         <ul>
             <li><a href="#work">Work</a></li>
-            <li><a href="Dhamar_Carrillo_Tor_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+            <li><a href="Dhamar Carrillo TOR RESUME.pdf" target="_blank" rel="noopener">Resume</a></li>
             <li><a href="mailto:dbccarrillo13@gmail.com">Email</a></li>
             <li><a href="index.html">Full portfolio</a></li>
         </ul>
@@ -976,7 +1028,7 @@ dialog::backdrop {
                 <span class="cur" aria-hidden="true">|</span>
             </h2>
             <div class="row">
-                <a class="btn" href="Dhamar_Carrillo_Tor_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+                <a class="btn" href="Dhamar Carrillo TOR RESUME.pdf" target="_blank" rel="noopener">Download resume</a>
                 <a class="btn o" href="mailto:dbccarrillo13@gmail.com">Email me</a>
                 <a class="btn o" href="https://www.linkedin.com/in/dhamar-carrillo/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
@@ -999,31 +1051,35 @@ dialog::backdrop {
     </section>
 
     <section class="end" aria-labelledby="end-title">
-        <h2 id="end-title">Let's make some campaigns.</h2>
-        <p>I'd love to bring a mix of print, motion, and digital design to Tor AdPromo.</p>
-        <div class="row">
+        <h2 id="end-title">Tor AdPromo, I'm ready!</h2>
+        <p>I'd love to bring a mix of merch, motion, digital design, and passion for reading to your team.</p>
+        <!-- <div class="row">
             <a class="btn o" href="mailto:dbccarrillo13@gmail.com">Email me</a>
             <a class="btn" href="Dhamar_Carrillo_Tor_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
-        </div>
+        </div> -->
     </section>
 </main>
     </div>
 
     <div class="footer-reveal-space" aria-hidden="true"></div>
-    <footer class="quote-footer" aria-label="Favorite quote">
-        <blockquote>
-            <p class="quote-placeholder">A Brandon Sanderson quote will go here.</p>
-            <cite>— Brandon Sanderson</cite>
-        </blockquote>
-    </footer>
+    <div class="footer-stack">
+        <footer class="quote-footer" aria-label="Favorite quote">
+            <img class="floating-bamboo" src="images/floating_bamboo.png" alt="">
+            <blockquote>
+                <p class="quote-placeholder">"Why do we tell stories? They are a universal human experience... We need stories."</p>
+                <cite>BRANDON SANDERSON, YUMI AND THE NIGHTMARE PAINTER</cite>
+            </blockquote>
+        </footer>
+        <footer class="portfolio-footer" aria-label="Portfolio credits">
+            <p>made with html &amp; css &#10024; &copy; 2026 Dhamar Carrillo</p>
+        </footer>
+    </div>
 
 <dialog id="dlg" aria-labelledby="dt">
     <div class="mwrap">
         <div class="mview" id="mview">
             <span class="count" id="mcount"></span>
-            <div class="mstage">
-                <img id="mimg" alt="">
-            </div>
+            <div class="mstage" id="mstage"></div>
             <button class="arr pv" id="mpv" aria-label="Previous image">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M13 6l6 6-6 6"/>
@@ -1083,8 +1139,9 @@ const projects = [
     details: [
       "Produced media kits, brand assets, and sponsorship prospectuses for 20+ industry sponsors, including Jane Street, Google, Meta, Citadel, and HRT.",
       "Designed them to explain the organization’s year-round initiatives and conference goals and to support sponsor outreach.",
-      "Coordinated every deliverable on deadline alongside the conference timeline."
+      "Developed WECode’s first annual conference theme, “Beyond the Frame,” and carried its frame motifs through social graphics all year."
     ],
+    tools: "InDesign, Premiere Pro, After Effects, Squarespace, Canva",
     caseStudy: "projects/wecode.html",
     images: [
       "images/wecode/welcome_wecode.gif",
@@ -1119,10 +1176,10 @@ const projects = [
     category: "Interactive 3D",
     color: "p",
     title: "Space Room",
-    description: "A customizable 3D environment for exploring celestial sights and phenomena.",
+    description: "I've got science fiction covered! Explore outer space scenes from your window.",
     details: [
-      "Explores the idea of traveling through space from your room.",
-      "Designed as a customizable 3D environment for exploring celestial sights and phenomena."
+      "Designed as a customizable 3D environment for exploring celestial sights and phenomena, including astrophage inspired by Andy Weir's book Project Hail Mary and its film adaptation",
+      "Allows users to mix-and-match different environments and objects"
     ],
     tools: "Unity, 3D modeling, interactive design",
     caseStudy: "projects/space_room.html",
@@ -1159,17 +1216,26 @@ const projects = [
     category: "Motion",
     color: "b",
     title: "Short Animated Clips",
-    description: "Short motion graphics made for social media or personal projects",
-    role: "Illustrator, Animator",
+    description: "Short motion graphics made as personal projects",
+    role: "Adobe After Effects, Premiere Pro, Procreate, Hand-drawn",
     details: [
-      "Designed and scheduled social graphics against a content calendar I planned myself.",
-      "Developed WECode’s first annual conference theme, “Beyond the Frame,” and carried its frame motifs through graphics all year.",
-      "Kept the brand consistent across the website and every social platform."
+      "Animated watercolor painting, scene inspired by Japanese movie Kokuho (2025)",
+      "Digital illustration inspired by La Muerte from the Book of Life (2014); animated on After Effects",
+      "8-postcard acrylic painting inspired by Sanderson's Yumi and the Nightmare Painter",
+      "Video game-inspired intro video; graphics created and animated on Premiere Pro"
     ],
-    caseStudy: "projects/wecode.html",
+    caseStudy: "art.html#personal-projects-tab",
+    caseStudyLabel: "Check out some of my art!",
     images: [
       "images/art/kokuho_animation_LS.gif",
-      "images/art/TBOL_la_muerte_web.gif"
+      "images/art/TBOL_la_muerte_web.gif",
+      "images/art/yumi_intertwines.jpg"
+    ],
+    videos: [
+      {
+        src: "images/art/cut_the_cameras.mp4",
+        poster: "images/art/cut_the_cameras_poster.jpg"
+      }
     ]
   }
 ];
@@ -1178,25 +1244,45 @@ const dialog = document.getElementById("dlg");
 const byId = (id) => document.getElementById(id);
 const dialogState = {
   project: null,
-  images: [],
+  media: [],
   index: 0,
   opener: null
 };
 
-function renderDialogImage() {
-  const image = byId("mimg");
-  byId("mview").classList.toggle("single", dialogState.images.length < 2);
+function renderDialogMedia() {
+  const stage = byId("mstage");
+  stage.querySelector("video")?.pause();
+  stage.replaceChildren();
+  byId("mview").classList.toggle("single", dialogState.media.length < 2);
 
-  if (!dialogState.images.length) {
-    image.removeAttribute("src");
-    image.alt = "";
+  if (!dialogState.media.length) {
     byId("mcount").textContent = "";
     return;
   }
 
-  image.src = dialogState.images[dialogState.index];
-  image.alt = `${dialogState.project.title}, image ${dialogState.index + 1} of ${dialogState.images.length}`;
-  byId("mcount").textContent = `${dialogState.index + 1} / ${dialogState.images.length}`;
+  const media = dialogState.media[dialogState.index];
+  if (typeof media === "string") {
+    const image = new Image();
+    image.src = media;
+    image.alt = `${dialogState.project.title}, image ${dialogState.index + 1} of ${dialogState.media.length}`;
+    stage.appendChild(image);
+
+    const nextMedia = dialogState.media[(dialogState.index + 1) % dialogState.media.length];
+    if (typeof nextMedia === "string") {
+      new Image().src = nextMedia;
+    }
+  } else {
+    const video = document.createElement("video");
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = "none";
+    video.poster = media.poster;
+    video.src = media.src;
+    video.setAttribute("aria-label", `${dialogState.project.title}, video ${dialogState.index + 1} of ${dialogState.media.length}`);
+    stage.appendChild(video);
+  }
+
+  byId("mcount").textContent = `${dialogState.index + 1} / ${dialogState.media.length}`;
 
   [...byId("thumbs").children].forEach((button, index) => {
     if (index === dialogState.index) {
@@ -1205,24 +1291,21 @@ function renderDialogImage() {
       button.removeAttribute("aria-current");
     }
   });
-
-  const nextImage = new Image();
-  nextImage.src = dialogState.images[(dialogState.index + 1) % dialogState.images.length];
 }
 
 function changeDialogImage(direction) {
-  if (!dialogState.images.length) {
+  if (!dialogState.media.length) {
     return;
   }
 
   dialogState.index =
-    (dialogState.index + direction + dialogState.images.length) % dialogState.images.length;
-  renderDialogImage();
+    (dialogState.index + direction + dialogState.media.length) % dialogState.media.length;
+  renderDialogMedia();
 }
 
-function openProjectDialog(project, images, startIndex, opener) {
+function openProjectDialog(project, media, startIndex, opener) {
   dialogState.project = project;
-  dialogState.images = images;
+  dialogState.media = media;
   dialogState.index = startIndex;
   dialogState.opener = opener;
 
@@ -1261,25 +1344,35 @@ function openProjectDialog(project, images, startIndex, opener) {
 
   const thumbnails = byId("thumbs");
   thumbnails.replaceChildren(
-    ...images.map((source, index) => {
+    ...media.map((item, index) => {
       const button = document.createElement("button");
       button.className = "th";
-      button.setAttribute("aria-label", `Show image ${index + 1} of ${images.length}`);
+      button.setAttribute(
+        "aria-label",
+        `Show ${typeof item === "string" ? "image" : "video"} ${index + 1} of ${media.length}`
+      );
 
       const thumbnail = new Image();
-      thumbnail.src = source;
+      thumbnail.src = typeof item === "string" ? item : item.poster;
       thumbnail.alt = "";
       button.appendChild(thumbnail);
+      if (typeof item !== "string") {
+        const playIcon = document.createElement("span");
+        playIcon.className = "th-play";
+        playIcon.setAttribute("aria-hidden", "true");
+        playIcon.textContent = "▶";
+        button.appendChild(playIcon);
+      }
       button.addEventListener("click", () => {
         dialogState.index = index;
-        renderDialogImage();
+        renderDialogMedia();
       });
 
       return button;
     })
   );
 
-  renderDialogImage();
+  renderDialogMedia();
   dialog.showModal();
   byId("mclose").focus();
   document.body.style.overflow = "hidden";
@@ -1304,6 +1397,7 @@ dialog.addEventListener("keydown", (event) => {
   }
 });
 dialog.addEventListener("close", () => {
+  byId("mstage").querySelector("video")?.pause();
   document.body.style.overflow = "";
   dialogState.opener?.focus();
 });
@@ -1430,7 +1524,12 @@ function createProjectCard(project) {
 
   const openButton = item.querySelector(".open");
   openButton.addEventListener("click", () => {
-    openProjectDialog(project, images.map((image) => image.src), currentIndex, openButton);
+    openProjectDialog(
+      project,
+      [...images.map((image) => image.src), ...(project.videos || [])],
+      currentIndex,
+      openButton
+    );
   });
 
   if (visibilityObserver) {

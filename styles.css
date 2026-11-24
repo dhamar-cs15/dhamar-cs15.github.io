@@ -1439,7 +1439,8 @@ nav ul li a:hover::after{
     overflow: hidden;
 }
 
-.project-images-layout img {
+.project-images-layout img,
+.project-images-layout video {
     width: 100%;
     height: 100%;
     object-fit: cover;

@@ -84,7 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => activateTab(button.dataset.target));
   });
 
-  activateTab('professional-art');
+  const hashTarget = window.location.hash.slice(1);
+  const linkedTab = tabButtons.find(
+    (button) => button.id === hashTarget || button.dataset.target === hashTarget
+  );
+  activateTab(linkedTab?.dataset.target || 'professional-art');
 
   closeButton.addEventListener('click', closeLightbox);
   prevButton.addEventListener('click', () => updateLightbox(currentIndex - 1));

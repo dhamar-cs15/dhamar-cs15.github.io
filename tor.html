@@ -987,6 +987,21 @@ dialog::backdrop {
   }
 }
 
+/* Spec project */
+.spec-section{padding:56px 0 64px;scroll-margin-top:100px}
+.spec-card{display:grid;grid-template-columns:minmax(240px,420px) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(18px,3vw,36px);border:1px solid rgba(61,130,194,.2);border-radius:14px;background:#fff}
+.spec-video{display:block;width:100%;aspect-ratio:1280/1910;border-radius:12px;background:var(--deep-blue)}
+.spec-note{margin:8px 0 0;color:var(--navy);font-size:14px;font-weight:300;text-align:center}
+.spec-chip{display:inline-block;border-radius:3px;background:var(--pink);color:var(--navy);padding:3px 10px;font-size:14px}
+.spec-copy h3{margin:10px 0 4px;color:var(--blue);font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:600;line-height:1.2}
+.spec-role{margin:0 0 14px;color:var(--navy);font-weight:300}
+.spec-copy ul{display:grid;gap:12px;margin:0 0 14px;padding:0;list-style:none}
+.spec-copy li{position:relative;padding-left:16px;font-weight:300;line-height:1.5}
+.spec-copy li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:#f3848a}
+.spec-tools{margin:0;color:var(--navy);font-size:14px}
+.spec-copy .row{margin-top:18px}
+.spec-legal{margin:18px 0 0;color:#555;font-size:13px;font-weight:300}
+@media (max-width:760px){.spec-card{grid-template-columns:1fr}.spec-video{max-width:360px;margin:0 auto}}
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1031,6 +1046,33 @@ dialog::backdrop {
                 <a class="btn" href="Dhamar Carrillo TOR RESUME.pdf" target="_blank" rel="noopener">Download resume</a>
                 <a class="btn o" href="mailto:dbccarrillo13@gmail.com">Email me</a>
                 <a class="btn o" href="https://www.linkedin.com/in/dhamar-carrillo/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="spec-section" id="spec" aria-labelledby="spec-title">
+        <h2 class="section-title" id="spec-title">Spec Project for Tor</h2>
+        <p class="lede">Here's a short animation I made for an upcoming Tor book, Maddie Martinez's The Haunting of Lady Death, a snippet of what I'd do as a Junior Designer.</p>
+        <div class="spec-card">
+            <div>
+                <video class="spec-video" id="specVideo" controls playsinline preload="metadata" poster="images/tor/haunting_lady_death_poster.png">
+                    <source src="images/tor/haunting_of_lady_death_SPEC-TRAILER.mp4" type="video/mp4">
+                    Your browser can't play this video. <a href="https://youtu.be/bEIGo3uRtjk?si=sVJh1koTIt40_bHF" target="_blank" rel="noopener">Watch it on YouTube.</a>
+                </video>
+                <p class="spec-note">Turn sound on for music!</p>
+            </div>
+            <div class="spec-copy">
+                <span class="spec-chip">Personal spec animation</span>
+                <h3>The Haunting of Lady Death</h3>
+                <p class="spec-role">By Maddie Martinez &middot; Tor Books &middot; Coming February 9, 2027</p>
+                <ul>
+                    <li>Built from the finished cover: I cut it into layers in Photoshop and animated them in After Effects, with a slow push-in, flickering candlelight, and characters that come to life through the cover.</li>
+                    <li>Animated by hand. No generative AI was used.</li>
+                    <li>Short form videos like these could be used to do cover reveals on social platforms such as Instagram and TikTok.</li>
+                    <li>When brainstorming the project, I decided to look at Tor's social media posts to find a book that didn't have a lot of promo yet but caught my eye. I enjoyed getting to work with the cover illustration and learn more about the book through this process.</li>
+                </ul>
+                <p class="spec-tools">Tools: Photoshop, After Effects</p>
+                <p class="spec-legal">Cover art and title &copy; Tor Books, Maddie Martinez (author), Mary Metzger (Illustrator), and Lesley Woreell (Designer). This is a personal spec project and is not affiliated with or endorsed by Tor.</p>
             </div>
         </div>
     </section>
@@ -1196,20 +1238,20 @@ const projects = [
     category: "Web",
     color: "b",
     title: "Past, Present, Projection",
-    description: "A scrollytelling data site in React and D3.",
-    role: "Built with two classmates: UI, data analysis, and visual storytelling",
+    description: "A scrollytelling page asking why people were watching Spider-Man more during the pandemic sounds like something that would go in Reactor.",
+    role: "Built with two classmates: focused on UI, data analysis, and visual storytelling",
     details: [
       "Designed and coded a film-themed scrollytelling site with interactive controls, animations, and 7 data-driven visualizations.",
-      "Prepared the data: 210 country-year movie and unemployment records across 6 countries, plus 5,704 economic-freedom observations across 186 countries."
+      "Prepared the data: 210 country-year movie and unemployment records across 6 countries, plus 5,704 economic-freedom observations across 186 countries.",
+      "Evaluated the importance of film and media in societal contexts."
     ],
     tools: "React, D3.js, JavaScript, CSS",
     caseStudy: "projects/movies_viz.html",
     images: [
       "images/movies/movies_opening.gif",
-      "images/movies/genre_reel.png",
-      "images/movies/economic_map.png",
-      "images/movies/line_graph.png",
-      "images/movies/superhero_trend.png"
+      "images/movies/superhero_trend.png",
+      "images/movies/camera-aperture.gif",
+      "images/movies/escapism_economic_graph.png"
     ]
   },
   {
@@ -1428,7 +1470,6 @@ function createProjectCard(project) {
       <div class="layer">
         <h3>${project.title}</h3>
         <p>${project.description}</p>
-        <span class="hint">Select for project details ${arrowIcon}</span>
       </div>
     </div>
     <div class="under">
@@ -1554,6 +1595,7 @@ window.setTimeout(() => {
 }, 3500);
 
 const phrases = [
+  ["I would love to be ", ["Junior Designer", "p"], " at ", ["Tor AdPromo.", "b"]],
   ["I design ", ["merch, print, and motion.", "p"]],
   ["My favorite genres are ", ["fantasy", "b"], " and ", ["science fiction", "p"], "."],
   ["I love figuring out what makes ", ["stories", "b"], " special to readers."]
@@ -1615,6 +1657,17 @@ if (reduceMotion) {
   });
 } else {
   animatePhrases();
+}
+
+const specVideo = document.getElementById("specVideo");
+const specPlay = document.getElementById("specPlay");
+if (specVideo && specPlay) {
+  specPlay.addEventListener("click", () => {
+    specVideo.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    specVideo.muted = false;
+    specVideo.currentTime = 0;
+    specVideo.play().catch(() => {});
+  });
 }
 </script>
 </body>

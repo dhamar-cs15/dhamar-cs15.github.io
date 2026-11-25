@@ -2,9 +2,9 @@ const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
 const textArray = [
-    ["I'm studying ", {text: "Computer Science", class: "highlight-blue"}, " and ", {text: "Government", class: "highlight-pink"}, " @ Harvard"],
-    [{text: "UI/UX Designer,", class: "highlight-blue"}, " Software Developer, ", {text: "Artist", class: "highlight-pink"}],
-    ["I absolutely ", {text: "LOVE", class: "highlight-pink"}, " stories and reading. Current read: ", {text: "White Sand", class: "highlight-blue"}],
+    ["I studied ", {text: "Computer Science", class: "highlight-blue"}, " and ", {text: "Government", class: "highlight-pink"}, " @ Harvard"],
+    [{text: "Interactive Designer,", class: "highlight-blue"}, " Creative Technologist, ", {text: "Artist", class: "highlight-pink"}],
+    ["I absolutely ", {text: "LOVE", class: "highlight-pink"}, " stories and reading. Current read: ", {text: "Edgedancer", class: "highlight-blue"}],
     ["A retired ", {text: "astronomy", class: "highlight-blue"}, " nerd ✨"],
     ["Up at 3am learning to ", {text: "animate", class: "highlight-pink"}],
     [{text: "Hola,", class: "highlight-pink"}, " Bonjour, 你好, Hei, こんにちは! Also learning ", {text: "languages", class: "highlight-blue"}, " at 3am"]

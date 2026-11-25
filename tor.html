@@ -1210,7 +1210,7 @@ const projects = [
     caseStudy: "projects/ribboned.html",
     images: [
       "images/animation_films/ribboned_titlecard.png",
-      "images/animation_films/transitions_ribboned.gif",
+      "images/animation_films/transitions_ribboned.mp4",
       "images/animation_films/ribboned_credits.png"
     ]
   },
@@ -1536,31 +1536,46 @@ function createProjectCard(project) {
   }
 
   project.images.forEach((source, index) => {
-    const image = new Image();
-    image.className = "s";
-    image.alt = `${project.title}, image ${index + 1}`;
-    image.decoding = "async";
-    if (index > 0) {
-      image.loading = "lazy";
+    let media;
+    if (source.toLowerCase().endsWith(".mp4")) {
+      media = document.createElement("video");
+      media.autoplay = true;
+      media.muted = true;
+      media.loop = true;
+      media.playsInline = true;
+      media.preload = index > 0 ? "metadata" : "auto";
+      media.setAttribute("aria-label", `${project.title}, video ${index + 1}`);
+      const mp4Source = document.createElement("source");
+      mp4Source.src = source;
+      mp4Source.type = "video/mp4";
+      media.appendChild(mp4Source);
+    } else {
+      media = new Image();
+      media.decoding = "async";
+      media.alt = `${project.title}, image ${index + 1}`;
+      if (index > 0) {
+        media.loading = "lazy";
+      }
+      media.src = source;
     }
+    media.className = "s";
 
-    image.addEventListener("error", () => {
-      const failedIndex = images.indexOf(image);
+    media.addEventListener("error", () => {
+      const failedIndex = images.indexOf(media);
       if (failedIndex === -1) {
         return;
       }
 
       images.splice(failedIndex, 1);
-      image.remove();
+      media.remove();
       if (currentIndex >= images.length) {
         currentIndex = 0;
       }
       renderImages();
     });
 
-    image.src = source;
-    images.push(image);
-    stage.appendChild(image);
+    images.push(media);
+    stage.appendChild(media);
   });
 
   const openButton = item.querySelector(".open");

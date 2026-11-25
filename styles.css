@@ -396,19 +396,61 @@ tr:nth-child(even) {
 }
 
 #index-header {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
-    background-image: url(images/astronaut_header.png);
-    background-size: cover;
-    background-position: center;
+    background: #f2f2f2;
 }
 
-#index-header{
+.index-hero {
+    position: relative;
+    isolation: isolate;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.index-hero-copy {
+    position: absolute;
+    z-index: 1;
+    top: clamp(4rem, 18vh, 9rem);
+    left: clamp(16px, 4vw, 48px);
+    width: 46%;
+    max-width: 560px;
+    font-size: 30px;
+}
+
+.index-hero-art {
+    position: absolute;
+    z-index: 0;
+    top: -10%;
+    right: 0%;
+    bottom: 0;
+    width: min(52%, 620px);
+    pointer-events: none;
+}
+
+.index-hero-art img {
+    position: absolute;
+    display: block;
     width: 100%;
-    height: 100vh;
-    /* background-color: white;; */
-    background-size: cover;
-    background-position: center;
+    height: 100%;
+    object-fit: contain;
+    object-position: center right;
+    animation: index-astro-float 4s ease-in-out infinite alternate;
+}
+
+@keyframes index-astro-float {
+    from {
+        translate: 0 0;
+    }
+
+    to {
+        translate: 0 -20px;
+    }
 }
 
 .container{
@@ -482,15 +524,8 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
-.header-text{
-    margin-top: 14%;
-    font-size: 30px;
-    position: absolute;
-    padding: 2rem;
-}
-
-.header-text h1{
-    font-size: 6rem;
+.index-hero-copy h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
     margin-top: 5px;
     margin-bottom: 10px;
     color: #3d82c2;
@@ -516,7 +551,8 @@ nav ul li a:hover::after{
 
 .typed-container {
     max-width: 35vw;       /* half the page width */
-    margin: 0 auto;        /* center it */
+    min-height: 4em;
+    margin: 0;        /* center it */
     text-align: left;      /* or center if you prefer */
     line-height: 1.0;
     white-space: normal;   /* allow wrapping */
@@ -735,7 +771,7 @@ nav ul li a:hover::after{
 
 .divider{
     width: 33%;
-    margin: 20px auto;
+    margin: 10px auto;
     border: none;
     height: 2px;
     background-color: #06215a67;
@@ -2413,23 +2449,38 @@ button:focus-visible,
 
     #index-header {
         height: auto;
-        min-height: max(34rem, 100svh);
+        min-height: 100svh;
     }
 
-    #index-header > .container {
-        padding-top: 0;
+    .index-hero {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        min-height: 0;
+        padding: 1rem 1rem 3rem;
     }
 
-    .header-text {
+    .index-hero-art {
         position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: min(92%, 360px);
+        height: clamp(220px, 65vw, 270px);
+        margin: 0 auto 1.5rem;
+    }
+
+    .index-hero-copy {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
         width: 100%;
         max-width: 100%;
-        margin-top: clamp(3rem, 12vh, 7rem);
-        padding: 0;
         font-size: clamp(1.25rem, 5vw, 1.875rem);
     }
 
-    .header-text h1 {
+    .index-hero-copy h1 {
         font-size: clamp(3rem, 14vw, 6rem);
         line-height: 1;
         overflow-wrap: anywhere;
@@ -2438,6 +2489,7 @@ button:focus-visible,
     .typed-container {
         width: 100%;
         max-width: 100%;
+        min-height: 7em;
         margin: 0;
     }
 

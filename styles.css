@@ -52,6 +52,50 @@ tr:nth-child(even) {
     overflow: hidden;
 }
 
+.andrade-preview {
+    width: min(100%, 75rem);
+    margin: 0 auto 2.5rem;
+}
+
+.andrade-preview-description {
+    max-width: 62ch;
+    margin: 0 auto 1.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.andrade-preview-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    width: min(100%, 64rem);
+    margin: 0 auto;
+}
+
+.andrade-preview-images figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.andrade-preview-images img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.andrade-preview-images figcaption {
+    margin-top: 0.6rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .andrade-preview-images {
+        grid-template-columns: 1fr;
+    }
+}
+
 .iframe-launch-button {
     display: flex;
     width: fit-content;
